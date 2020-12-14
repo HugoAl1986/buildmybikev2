@@ -1,0 +1,18 @@
+api_platform:
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+      # The title of the API.
+    title: 'yadBike'
+
+    # The description of the API.
+    description: '/** API permettant de disposer des différentes services du site **/'
+
+    # The version of the API.
+    version: '1.0.0'
+
+    # Set this to false if you want Webby to disappear.
+    show_webby: false
