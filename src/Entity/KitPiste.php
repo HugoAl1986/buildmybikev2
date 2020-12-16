@@ -86,7 +86,7 @@ class KitPiste
     private $prix;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitRoutes")
+     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitPistes")
      * @Groups({"KitPiste_read"})
      */
     private $commande;

@@ -78,6 +78,14 @@ class KitCyclocross
      * )
      */
     private $finition;
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"KitCyclocross_read"})
+     * @Assert\NotBlank(
+     *              message="Veuillez choisir vos freins"
+     * )
+     */
+    private $freins;
 
     /**
      * @ORM\Column(type="float")
@@ -86,7 +94,7 @@ class KitCyclocross
     private $prix;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="KitCyclocrosss")
+     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitCyclocrosses")
      * @Groups({"KitCyclocross_read"})
      */
     private $commande;
@@ -152,6 +160,18 @@ class KitCyclocross
     public function setBlocage(string $blocage): self
     {
         $this->blocage = $blocage;
+
+        return $this;
+    }
+
+    public function getFreins(): ?string
+    {
+        return $this->freins;
+    }
+
+    public function setFreins(string $freins): self
+    {
+        $this->freins = $freins;
 
         return $this;
     }

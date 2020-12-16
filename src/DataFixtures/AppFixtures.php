@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Clients;
 use App\Entity\Commande;
+use App\Entity\KitCyclocross;
 use App\Entity\KitPiste;
 use App\Entity\KitRoute;
 use Doctrine\Persistence\ObjectManager;
@@ -94,6 +95,22 @@ public function __construct(UserPasswordEncoderInterface $encoder){
                             ->setCommande($commande);
                              
                     $manager->persist($kitPiste);
+                    
+                    $kitCyclocross = new KitCyclocross();
+                    $prixCyclocross = 1099;
+                    // Permet de récupérer les prix de chaque kit route et de le stocker dans le tableauPrix               
+                    array_push($tableauPrix,$prixCyclocross);
+                    $kitCyclocross->setPrix($prixCyclocross)
+                                ->setModele($faker->randomElement($array = array('X-CROSS Matrix','X-CROSS Limit')))
+                                ->setCouleur($faker->colorName)
+                                ->setTaille($faker->randomElement($array = array('XS','S','M','L','XL')))
+                                ->setBlocage('traversant')
+                                ->setFinition($faker->randomElement($array = array('Mat','Brilant')))
+                                ->setBoitier($faker->randomElement($array = array('BSA','BB30')))
+                                ->setFreins('Disque')
+                                ->setCommande($commande);
+                             
+                    $manager->persist($kitCyclocross);
                 }
                 // Permet d'ajouter le montant total des kit au montant de la commande
                 $montantFacture = array_sum($tableauPrix);
@@ -105,5 +122,6 @@ public function __construct(UserPasswordEncoderInterface $encoder){
         $manager->flush($commande);
         $manager->flush($kitRoute);
         $manager->flush($kitPiste);
+        $manager->flush($kitCyclocross);
     }
 }

@@ -69,10 +69,18 @@ class Commande
 
     private $kitPistes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=KitCyclocross::class, mappedBy="commande")
+     * @Groups({"commande_read","commandes_subresource"})
+     */
+
+    private $kitCyclocrosses;
+
     public function __construct()
     {
         $this->kitRoutes = new ArrayCollection();
         $this->kitPistes = new ArrayCollection();
+        $this->kitCyclocrosses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -179,12 +187,43 @@ class Commande
         return $this;
     }
 
-    public function removeKitPiste(KitRoute $kitPiste): self
+    public function removeKitPiste(KitPiste $kitPiste): self
     {
-        if ($this->kitRoutes->removeElement($kitPiste)) {
+        if ($this->kitPistes->removeElement($kitPiste)) {
             // set the owning side to null (unless already changed)
             if ($kitPiste->getCommande() === $this) {
                 $kitPiste->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
+    
+    /**
+     * @return Collection|KitCyclocross[]
+     */
+    public function getKitCyclocrosses(): Collection
+    {
+        return $this->kitCyclocrosses;
+    }
+
+    public function addKitCyclocross(KitCyclocross $kitCyclocross): self
+    {
+        if (!$this->kitCyclocrosses->contains($kitCyclocross)) {
+            $this->kitCyclocrosses[] = $kitCyclocross;
+            $kitCyclocross->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKitCyclocross(KitCyclocross $kitCyclocross): self
+    {
+        if ($this->kitCyclocrosses->removeElement($kitCyclocross)) {
+            // set the owning side to null (unless already changed)
+            if ($kitCyclocross->getCommande() === $this) {
+                $kitCyclocross->setCommande(null);
             }
         }
 

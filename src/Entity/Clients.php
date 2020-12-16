@@ -55,7 +55,6 @@ class Clients implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Groups({"clients_read"})
      * @Assert\NotBlank(
      *              message = "Le password ne doit pas être nul"
      * )
