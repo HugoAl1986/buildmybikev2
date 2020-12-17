@@ -78,7 +78,7 @@ class KitTriathlon
     private $prix;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitRoutes")
+     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitTriathlons")
      * @Groups({"KitTriathlon_read"})
      */
     private $commande;

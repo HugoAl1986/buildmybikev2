@@ -107,7 +107,7 @@ class KitVtt
     private $prix;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitRoutes")
+     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="kitVtts")
      * @Groups({"KitVtt_read"})
      */
     private $commande;

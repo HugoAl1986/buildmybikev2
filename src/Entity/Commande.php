@@ -76,11 +76,36 @@ class Commande
 
     private $kitCyclocrosses;
 
+    /**
+     * @ORM\OneToMany(targetEntity=KitRoue::class, mappedBy="commande")
+     * @Groups({"commande_read","commandes_subresource"})
+     */
+
+    private $kitRoues;
+
+     /**
+     * @ORM\OneToMany(targetEntity=KitVtt::class, mappedBy="commande")
+     * @Groups({"commande_read","commandes_subresource"})
+     */
+
+    private $kitVtts;
+
+     /**
+     * @ORM\OneToMany(targetEntity=KitTriathlon::class, mappedBy="commande")
+     * @Groups({"commande_read","commandes_subresource"})
+     */
+
+    private $kitTriathlons;
+
     public function __construct()
     {
         $this->kitRoutes = new ArrayCollection();
         $this->kitPistes = new ArrayCollection();
         $this->kitCyclocrosses = new ArrayCollection();
+        $this->kitRoues = new ArrayCollection();
+        $this->kitVtts = new ArrayCollection();
+        $this->kitTriathlons = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -199,7 +224,6 @@ class Commande
         return $this;
     }
 
-    
     /**
      * @return Collection|KitCyclocross[]
      */
@@ -224,6 +248,97 @@ class Commande
             // set the owning side to null (unless already changed)
             if ($kitCyclocross->getCommande() === $this) {
                 $kitCyclocross->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+ 
+    /**
+     * @return Collection|KitRoue[]
+     */
+    public function getKitRoues(): Collection
+    {
+        return $this->kitRoues;
+    }
+
+    public function addKitRoues(KitRoue $kitRoue): self
+    {
+        if (!$this->kitRoues->contains($kitRoue)) {
+            $this->kitCyclocrosses[] = $kitRoue;
+            $kitRoue->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKitRoue(KitRoue $kitRoue): self
+    {
+        if ($this->kitRoues->removeElement($kitRoue)) {
+            // set the owning side to null (unless already changed)
+            if ($kitRoue->getCommande() === $this) {
+                $kitRoue->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
+     /**
+     * @return Collection|KitVtt[]
+     */
+    public function getKitVtts(): Collection
+    {
+        return $this->kitVtts;
+    }
+
+    public function addKitVtt(KitVtt $kitVtt): self
+    {
+        if (!$this->kitVtts->contains($kitVtt)) {
+            $this->kitVtts[] = $kitVtt;
+            $kitVtt->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKitVtt(KitVtt $kitVtt): self
+    {
+        if ($this->kitVtts->removeElement($kitVtt)) {
+            // set the owning side to null (unless already changed)
+            if ($kitVtt->getCommande() === $this) {
+                $kitVtt->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
+    
+    /**
+     * @return Collection|KitTriathlon[]
+     */
+    public function getKitTraithlons(): Collection
+    {
+        return $this->kitTriathlons;
+    }
+
+    public function addKitTriathlon(KitTriathlon $kitTriathlon): self
+    {
+        if (!$this->kitTriathlons->contains($kitTriathlon)) {
+            $this->kitTriathlons[] = $kitTriathlon;
+            $kitTriathlon->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKitTriathlon(KitTriathlon $kitTriathlon): self
+    {
+        if ($this->kitTriathlons->removeElement($kitTriathlon)) {
+            // set the owning side to null (unless already changed)
+            if ($kitTriathlon->getCommande() === $this) {
+                $kitTriathlon->setCommande(null);
             }
         }
 
