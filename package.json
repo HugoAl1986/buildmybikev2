@@ -1,0 +1,36 @@
+{
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@symfony/stimulus-bridge": "^1.1.0",
+        "@symfony/webpack-encore": "^0.32.0",
+        "core-js": "^3.0.0",
+        "file-loader": "^6.2.0",
+        "regenerator-runtime": "^0.13.2",
+        "stimulus": "^2.0.0",
+        "url-loader": "^4.1.1",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.11.2",
+        "axios": "^0.18.0",
+        "bootstrap": "^5.0.0-beta1",
+        "bootstrap-material-design": "^4.1.1",
+        "hover.css": "^2.3.2",
+        "jquery": "^3.5.1",
+        "jwt-decode": "^3.1.2",
+        "mdb-ui-kit": "^3.0.0",
+        "popper.js": "^1.16.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-icons": "^4.1.0",
+        "react-router-dom": "^5.0.0"
+    }
+}
