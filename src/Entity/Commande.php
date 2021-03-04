@@ -12,9 +12,9 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=CommandeRepository::class)
  * @ApiResource(
- *  normalizationContext={
- *      "groups"={"commande_read"}
- *  },
+ *  normalizationContext={"groups"={"commande_read"}},
+ * )
+ * 
  *  subresourceOperations={
  *      "api_clients_commandes_get_subresource"={
  *              "normalization_context" = {"groups"={"commandes_subresource"}}

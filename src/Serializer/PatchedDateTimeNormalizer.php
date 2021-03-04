@@ -17,6 +17,7 @@ use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 
+
 /**
  * Normalizes an object implementing the {@see \DateTimeInterface} to a date string.
  * Denormalizes a date string to an instance of {@see \DateTime} or {@see \DateTimeImmutable}.
@@ -87,11 +88,11 @@ class PatchedDateTimeNormalizer implements NormalizerInterface, DenormalizerInte
     {
         $dateTimeFormat = $context[self::FORMAT_KEY] ?? null;
         $timezone = $this->getTimezone($context);
-
+ /*
         if ('' === $data || null === $data) {
-            throw new NotNormalizableValueException('The data is either an empty string or null, you should pass a string that can be parsed with the passed format or a valid DateTime string.');
+            throw new NotNormalizableValueException('The data is either an empty string or null, you should pass a string that can be parsed with the passed format or a valid DateTime string.');  
         }
-
+  */      
         if (null !== $dateTimeFormat) {
             $object = \DateTime::class === $type ? \DateTime::createFromFormat($dateTimeFormat, $data, $timezone) : \DateTimeImmutable::createFromFormat($dateTimeFormat, $data, $timezone);
 
@@ -107,14 +108,10 @@ class PatchedDateTimeNormalizer implements NormalizerInterface, DenormalizerInte
         try {
             return \DateTime::class === $type ? new \DateTime($data, $timezone) : new \DateTimeImmutable($data, $timezone);
         } catch (\Exception $e) {
-
-            if($context['disable_type_enforcement'] ?? false)
-            {
+            if($context['disable_type_enforcement'] ?? false) {
                 return $data;
             }
             throw new NotNormalizableValueException($e->getMessage(), $e->getCode(), $e);
-
-
         }
     }
 

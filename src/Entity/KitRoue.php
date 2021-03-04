@@ -56,6 +56,11 @@ class KitRoue
      */
     private $commande;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $freins;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +110,18 @@ class KitRoue
     public function setCommande(?Commande $commande): self
     {
         $this->commande = $commande;
+
+        return $this;
+    }
+
+    public function getFreins(): ?string
+    {
+        return $this->freins;
+    }
+
+    public function setFreins(string $freins): self
+    {
+        $this->freins = $freins;
 
         return $this;
     }

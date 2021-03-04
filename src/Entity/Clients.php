@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\ClientsRepository;
 use Doctrine\Common\Collections\Collection;
+use App\Repository\ClientsRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -14,12 +14,23 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 
+
 /**
  * @ORM\Entity(repositoryClass=ClientsRepository::class)
- * @UniqueEntity("email",message="Un utilisateur possede déja cet email")
+ * @UniqueEntity("email",message="Désolé mais un utilisateur possede déja cet email !!")
  * @ApiResource(
  *      normalizationContext = {"groups"={"clients_read"}},
- *      denormalizationContext = {"disable_type_enforcement"=true}
+ *      denormalizationContext = {"disable_type_enforcement"=true},
+ *      
+ * itemOperations={
+ *      "get" = {
+ *      "normalization_context"={"groups"={"clients_read"}}
+ * },
+ *       "put" = {
+ *      "denormalization_context"={"groups"={"clients_put"}}
+ * },
+ *       "delete"
+ * }
  * )
  */
 class Clients implements UserInterface
@@ -29,14 +40,14 @@ class Clients implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"clients_read","commande_read"})
+     * @Groups({"clients_read","commande_read","clients_put"})
      */
     
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"clients_read","commande_read"})
+     * @Groups({"clients_read","commande_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le champs email est obligatoire"
      * )
@@ -55,8 +66,9 @@ class Clients implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Groups({"clients_read","clients_put"})
      * @Assert\NotBlank(
-     *              message = "Le password ne doit pas être nul"
+     *              message = "Le champs password est obligatoire"
      * )
      * @Assert\Length(
      *              min = 5,
@@ -66,7 +78,7 @@ class Clients implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"clients_read","commande_read"})
+     * @Groups({"clients_read","commande_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le prénom est obligatoire"
      * )
@@ -79,7 +91,7 @@ class Clients implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"clients_read","commande_read"})
+     * @Groups({"clients_read","commande_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le nom est obligatoire"
      * )
@@ -92,33 +104,26 @@ class Clients implements UserInterface
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"clients_read"})
-     * @Assert\NotBlank(
-     *              message="La date de naissance est obligatoire"
-     * )
-     * @Assert\Type(
-     *          type="DateTime",
-     *          message = "le champs doit être au format YYYY-MM-DD"
-     * )
+     * @Groups({"clients_read","clients_put"})
      */
     private $dateDeNaissance;
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"clients_read"})
+     * @Groups({"clients_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le numéro de rue est obligatoire"
      * )
      * @Assert\Type(
      *          type="numeric",
-     *          message = "le champs doit être un nombre."
+     *          message = "Le champs doit être un nombre."
      * )
      */
     private $numeroRue;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"clients_read"})
+     * @Groups({"clients_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le nom de la rue est obligatoire"
      * )
@@ -127,7 +132,7 @@ class Clients implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"clients_read"})
+     * @Groups({"clients_read","clients_put"})
      * @Assert\NotBlank(
      *              message="Le nom de la ville est obligatoire"
      * )
@@ -136,13 +141,13 @@ class Clients implements UserInterface
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"clients_read"})
+     * @Groups({"clients_read","clients_put"})
      * @Assert\Type(
      *     type="numeric",
-     *     message="le code postal doit être un nombre."
+     *     message="Le code postal doit être un nombre."
      * )
      * @Assert\NotBlank(
-     *              message="Le code postal doit être spécifié"
+     *              message="Le champs code postal est obligatoire"
      * )
      */
     private $codePostal;
@@ -154,6 +159,7 @@ class Clients implements UserInterface
      */
     private $commandes;
 
+   
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -266,7 +272,7 @@ class Clients implements UserInterface
         return $this->dateDeNaissance;
     }
 
-    public function setDateDeNaissance($dateDeNaissance): self
+    public function setDateDeNaissance(\DateTimeInterface $dateDeNaissance): self
     {
         $this->dateDeNaissance = $dateDeNaissance;
 
@@ -350,4 +356,5 @@ class Clients implements UserInterface
 
         return $this;
     }
+
 }

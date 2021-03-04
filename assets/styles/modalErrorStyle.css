@@ -1,0 +1,31 @@
+#imgdanger{
+    width : 94%;
+    height: 100%;
+}
+#buttoncloseerror,#buttoncloseerror:focus{
+    background-color:red;
+    padding : 0.5rem 1rem;
+    border-radius:0;
+    border:none;
+    font-size:0.8rem;
+    box-shadow:0px 0px 0px 0px; 
+    
+}
+#buttoncloseerror:hover{
+    background-color:white;
+    color: red;
+    box-shadow:0px 0px 0px 2px red inset; 
+}
+.modal-content{
+    border-radius:0;  
+}
+#textmodal{
+    font-size:0.85rem;
+    color:red;
+}
+.modal-footer{
+    border-top:0px;
+}
+.modal-body{
+    padding:1rem 0;
+}

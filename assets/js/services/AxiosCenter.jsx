@@ -1,15 +1,16 @@
 import axios from 'axios';
 import JWTDecode from 'jwt-decode';
+import {API_URL} from './config';
 function getClients(){
     return(
-        axios.get("http://localhost:8000/api/clients")
+        axios.get(API_URL+"clients")
              .then(response => {response.data["hydra:member"]; console.log(response.data["hydra:member"])}, 
                     )     
         )
 }
 function getCommandes(){
     return(
-        axios.get("http://localhost:8000/api/commandes")
+        axios.get(API_URL+"commandes")
              .then(response => {response.data["hydra:member"]; console.log(response.data["hydra:member"])}, 
                     )     
         )
@@ -19,7 +20,7 @@ function getCommandes(){
 
 function Authentification(identifiants){
     return(
- axios.post("http://localhost:8000/api/login_check", identifiants)
+          axios.post(API_URL+"login_check", identifiants)
           .then(response => {
               const token = response.data.token;
               // stockage du token
@@ -51,6 +52,8 @@ function setup(){
         const JWTData = JWTDecode(token);
         if(JWTData.exp*1000 > new Date().getTime()){
             SetHeaderToken(token)
+        }else{
+            window.sessionStorage.removeItem("authToken");
         }
     }
 }
@@ -58,14 +61,13 @@ function setup(){
 // Récupérer le prénom et l'afficher dans la Navbar
 function getPrenom() {
     const token = window.sessionStorage.getItem("authToken");
-    const monCompte = "Me Connecter";
+    const monCompte = "ME CONNECTER";
     if(token) {
         const JWTData = JWTDecode(token);
         return (`Hey ${JWTData.prenom}`)
     } else return monCompte;
-    
-    return monCompte;
 }
+
 
 // Permet de savoir si on est identifié
 
@@ -82,6 +84,36 @@ function isAuthenticated(){
      }
      return false;
 }
+
+function inscriptionClient(identifiants){
+   return( axios.post(API_URL+"clients",identifiants)
+   )
+}
+function getID(){
+    const token = window.sessionStorage.getItem("authToken")
+    const JWT = JWTDecode(token);
+    return JWT.id
+}
+function getClient(id){
+    const token = window.sessionStorage.getItem("authToken");
+    SetHeaderToken(token)
+    return axios.get(API_URL+"clients/"+id)
+}
+function putClient(id,identifiants){
+    const token = window.sessionStorage.getItem("authToken");
+    SetHeaderToken(token);
+    return axios.put(API_URL+"clients/"+id,identifiants)
+            
+}
+function getCommande(id){
+    const token = window.sessionStorage.getItem("authToken");
+    SetHeaderToken(token);
+    return axios.get(`${API_URL}clients/${id}/commandes`)
+}
+function postCommandes(DataCommande){
+    return axios.post(API_URL+"commandes",DataCommande)
+}
+
     
 
 export default {
@@ -91,5 +123,12 @@ export default {
     Deconnection, 
     setup,
     getPrenom, 
-    isAuthenticated
+    isAuthenticated,
+    inscriptionClient,
+    getID,
+    getClient,
+    putClient,
+    getCommande,
+    SetHeaderToken,
+    postCommandes
 };

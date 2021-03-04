@@ -1,0 +1,243 @@
+
+#bandeauMenuAero{
+    background-color: #6CA0B2;
+    height: 90px;  
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+
+#bandeauMenuRoues{
+    background-color: rgb(215, 165, 235);
+    height: 90px;  
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+#bandeauMenuCyclocross{
+    background-color: #89e985;
+    height: 90px;  
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+#bandeauMenuVTT{
+    background-color: #D7FF95  ;
+    height: 90px;  
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#bandeauMenuTri{
+    background-color: #f5f256  ;
+    height: 90px;  
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#bandeauMenuAero h5{
+    color:black;
+    font-weight:bold;
+}
+#bandeauMenuRoues h5{
+    color:black;
+    font-weight:bold;
+}
+#bandeauMenuTri h5{
+    color:black;
+    font-weight:bold;
+}
+#bandeauMenuVTT h5{
+    color:black;
+    font-weight:bold;
+}
+#bandeauMenuCyclocross h5{
+    color:black;
+    font-weight:bold;
+}
+.BikeItemAero{
+    padding:0.3rem 0.6rem;
+    font-size:0.7rem;
+    color:rgb(19, 23, 39);
+    border:none;
+    background-color: #6CA0B2;
+}
+.BikeItemRoues{
+    padding:0.3rem 0.6rem;
+    font-size:0.7rem;
+    color:rgb(19, 23, 39);
+    border:none;
+    background-color: rgb(215, 165, 235);
+}
+.BikeItemCyclocross{
+    padding:0.3rem 0.6rem;
+    font-size:0.7rem;
+    color:rgb(19, 23, 39);
+    border:none;
+    background-color: #89e985;
+}
+.BikeItemVTT{
+    padding:0.3rem 0.6rem;
+    font-size:0.7rem;
+    color:rgb(19, 23, 39);
+    border:none;
+    background-color: #D7FF95 ;
+}
+.BikeItemTri{
+    padding:0.3rem 0.6rem;
+    font-size:0.7rem;
+    color:rgb(19, 23, 39);
+    border:none;
+    background-color: #f5f256  ;
+}
+.BikeItem:hover{
+    color: #C5CDF3
+}
+
+.presentation{
+    font-size:0.85rem;
+    color:#69696A 
+}
+.prix{
+    color : #DCB111 ;
+    font-weight:bold;
+}
+.hrConfigurateur{
+    margin-left:0;
+    margin-right:0;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width:50%;
+    margin-left:0;
+    margin-top:0.8rem;
+}
+/* Roues */
+
+.roues{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(215, 165, 235);
+    font-weight:bold;
+    margin:0 2rem;
+    border:solid 1px black;
+    font-size:0.8rem;
+
+}
+
+/* Vélo */
+.carrebleu{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:#13E7C7;
+    margin:0 2rem;
+}
+.carrenoir{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:black;
+    margin:0 2rem;
+}
+.carreblanc{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:white;
+    margin:0 2rem;
+}
+.carregris{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:grey;
+    margin:0 2rem;
+}
+.carreorange{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:orange ;
+    margin:0 2rem;
+}
+.carrerouge{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:red;
+    margin:0 2rem;
+}
+.carrerougejaune{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:red;
+    background-image:linear-gradient(red 50%, yellow 50%);
+    margin:0 2rem;
+}
+.carrebleunoir{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:blue;
+    background-image:linear-gradient(blue 50%, black 50%);
+    margin:0 2rem;
+}
+.carrenoirjaune{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:yellow;
+    background-image:linear-gradient(yellow 50%, black 50%);
+    margin:0 2rem;
+}
+.carrerougenoir{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:red;
+    background-image:linear-gradient(red 50%, black 50%);
+    margin:0 2rem;
+}
+.carrejaune{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:yellow;
+    margin:0 2rem;
+}
+.carrebleufonce{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:rgba(33, 76, 194, 0.904);
+    margin:0 2rem;
+}
+.carrevert{
+    width:30px;
+    height: 30px;
+    border:solid 1px black;
+    background-color:rgb(40, 236, 40);
+    margin:0 2rem;
+}
+
+.carrebleu:focus,.roues:focus,.carrevert:focus,.carrenoirjaune:focus,.carrerougenoir:focus,.carrebleufonce:focus,.carreblanc:focus,.carregris:focus,.carrejaune:focus,.carrerouge:focus,.carreorange:focus,.carregris:focus,.carrerougejaune:focus{
+    outline:none;
+    border: solid 1px black;
+}
+.configurateur{
+    font-size:0.9rem;
+}
+sup{
+    color:red;
+}
+#ajoutPanier,#ajoutPanier:focus{
+    background-color:#DCB111;
+    padding : 1rem 2rem;
+    border-radius:0;
+    border:none;
+    font-size:0.8rem;
+    box-shadow:0px 0px 0px 0px;
+    outline:0px;
+    
+}
+#ajoutPanier:hover{
+    background-color:white;
+    color: #DCB111;
+    box-shadow:0px 0px 0px 2px #DCB111 inset; 
+   
+}

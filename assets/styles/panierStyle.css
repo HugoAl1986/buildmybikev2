@@ -1,0 +1,51 @@
+h3{
+    color:black;
+}
+#imagepanier{
+    width:100%;
+}
+.table-bordered th{
+    border-left:solid 1px black;
+    border-top:solid 1px black;
+    border-bottom:2px solid black;
+}
+.table-bordered td{
+    border-left:solid 1px black;
+    border-bottom:solid 1px black;
+}
+.table thead th{
+    border-bottom:2px solid black;
+}
+.table-bordered thead tr th:last-child{
+    border-right: solid 1px black;
+}
+.table-bordered tbody tr td:last-child{
+    border-right: solid 1px black;
+}
+.table-bordered thead{
+    background-color:#C8FFE1;
+}
+.table {
+    border:none
+}
+#supprimerpanier{
+    background-color:transparent;
+    border:none;
+    padding:0;
+}
+#passerCommande,#passerCommande:focus{
+    background-color:#DCB111;
+    padding : 1rem 2rem;
+    border-radius:0;
+    border:none;
+    font-size:0.8rem;
+    box-shadow:0px 0px 0px 0px; 
+}
+#passerCommande:hover{
+    background-color:white;
+    color: #DCB111;
+    box-shadow:0px 0px 0px 2px #DCB111 inset; 
+}
+
+
+

@@ -10,6 +10,7 @@ var Style= { color : "#414F8E",
             backgroundColor : "#ECEDF0" }
 
 const Accueil = () => {
+    
     return ( 
         <>
                 <div className="row"> 
@@ -17,7 +18,7 @@ const Accueil = () => {
                         <img className="card-img text-light" src={buildbgaero} alt="Card image"/>
                         <div className="card-img-overlay d-flex align-items-center justify-content-center">
                             <h4 style = {Style} className="border border-darkrounded text-uppercase p-2 text-center" 
-                            >Votre vélo au meilleur prix, la personnalisation est offerte</h4>
+                            >Votre cadre au meilleur prix, la personnalisation est offerte</h4>
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,7 @@ const Accueil = () => {
                    <div className="col-4">
                             <a href="#" className="hvr-grow text-decoration-none"><h4 className="pt-4 pb-1 m-0"> Route </h4> </a>
                             <hr className="hrstyle"></hr>
-                            <p className="m-0 pt-1"> Profitez de nos 2 modèles de vélo de route accés confort ou compétition qui s'adapteront à votre pratique.</p>
+                            <p className="m-0 pt-1"> Profitez de nos 2 modèles de cadre de route accés confort ou compétition qui s'adapteront à votre pratique.</p>
                    </div>
                </div>
                <div className="row">
@@ -47,7 +48,7 @@ const Accueil = () => {
                    <div className="col-5">
                             <a href="#" className="hvr-grow text-decoration-none"><h4 className="pt-4 pb-1 m-0"> Triathlon</h4> </a>
                             <hr className="hrstyle"></hr>
-                            <p className="m-0 pt-1"> Nos vélos de triathlon offrent une pénétration parfaite dans le vent pour battre tous vos chronos.</p>
+                            <p className="m-0 pt-1"> Nos cadres de triathlon offrent une pénétration parfaite dans le vent pour battre tous vos chronos.</p>
                    </div>
                </div>
                <div className="row">

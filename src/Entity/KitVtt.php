@@ -29,7 +29,7 @@ class KitVtt
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"KitVtt_read","commande_read"})
-     * @Assert\Choice({"XC29","XC-SUSP"})
+     * @Assert\Choice({"XRigide","XSusp"})
      * @Assert\NotBlank(
      *              message="Veuillez choisir un cadre"
      * )

@@ -111,6 +111,7 @@ class KitRoute
      */
     private $commande;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -236,4 +237,6 @@ class KitRoute
 
         return $this;
     }
+
+
 }
