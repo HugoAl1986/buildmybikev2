@@ -10,7 +10,6 @@ import FormFormikRoues from "../component/FormFormikRoues";
 const VttSusp = ({panier,prevPanier}) => {
     const[changeHauteurRoues, setChangeHauteurRoues] = useState("80mm");
     const[prix,setPrix] = useState(700);
-    const[submitForm,setSubmitForm]=useState(false);
 
     const[dataBike,setDataBike]=useState({
         type : "Roues",
@@ -81,8 +80,6 @@ const VttSusp = ({panier,prevPanier}) => {
                     <FormFormikRoues 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         basse={basse}

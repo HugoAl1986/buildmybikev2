@@ -139,8 +139,6 @@ const handleClick = () => {
 
                     // Si l'email est modifié redirection vers la page d'accueuil pour une nouvelle conenction.
                     // l'email étant utilisé par Symfony pour la gestion d'un Utilisateur
-                            console.log(userData.email);
-                            console.log(newDataUser.email);
                     if(userData.email !== newDataUser.email)
                     {     
                         try{ 
@@ -172,7 +170,6 @@ const handleClick = () => {
                                 setSubmitForm(true)
                                 setDisableInput(true)
                                 setLoader(false);
-                                console.log(response)
                             }})
                           
                             }

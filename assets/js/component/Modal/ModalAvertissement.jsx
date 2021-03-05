@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 import '../../../styles/modalSuccessStyle.css';
 
 const ModalAvertissement = ({modalAvertissementAPP,setModalAvertissementAPP}) =>{
-    console.log(modalAvertissementAPP);
     const handleClose = () => {setModalAvertissementAPP(false)}
 
     return(

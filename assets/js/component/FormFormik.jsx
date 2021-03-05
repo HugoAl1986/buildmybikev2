@@ -4,11 +4,10 @@ import * as Yup from 'yup';
 
 
 const FormFormik = (
-    {panier,prix,prevPanier,submitForm,setSubmitForm,
+    {panier,prix,prevPanier,
     bikeBleu,bikeNoirJaune,bikeRougeNoir,bikeOrange,bikeVert,bikeNoir,bikeRouge,bikeJaune,bikeRougeJaune,bikeBlanc,bikeGris,bikeBleuNoir,dataCouleur,dataBike}) => {
 
     const newPrix = prix;
-       const [submitData,setSubmitData]=useState("donnée");
         
     return (
         <Formik
@@ -71,13 +70,8 @@ const FormFormik = (
                             couleurURL : values.couleur,
                             kitURL : dataBike.url
                         }
-                        console.log(newData);
                         panier([...prevPanier, newData]) 
-                        formik.resetForm({})
-                        
-                        
-                        
-                        
+                  
                     }}     
                     >    
               
@@ -85,8 +79,6 @@ const FormFormik = (
 
             ( 
                 <>
-                
-                {console.log(values)}
                     <Form className="form-group pl-5 pt-5 pb-4 col-12" onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="col-6">

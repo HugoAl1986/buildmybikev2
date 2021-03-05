@@ -10,7 +10,6 @@ import bleucyclo from "../images/cyclocross/bleucyclo.jpg";
 const Cyclocross = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("noir");
     const[prix,setPrix] = useState(1099);
-    const[submitForm,setSubmitForm]=useState(false);
 
     const [dataBike,setDataBike]=useState({
         modele : "XR-Cyclo",
@@ -21,7 +20,7 @@ const Cyclocross = ({panier,prevPanier}) => {
         {id : 1, couleur : "noir"},
         {id : 2, couleur : "rouge"},
         {id : 3, couleur : "bleu"},
-        {id : 3, couleur : "vert"}
+        {id : 4, couleur : "vert"}
     ])
     
     const changeImage = (event) => {
@@ -46,7 +45,7 @@ const Cyclocross = ({panier,prevPanier}) => {
                         : bleucyclo
                         
                         } 
-                        alt="imagecadre" class="img-thumbnail"/>
+                        alt="imagecadre" className="img-thumbnail"/>
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> XC-Cyclo </h6>
@@ -80,8 +79,6 @@ const Cyclocross = ({panier,prevPanier}) => {
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeNoir={noircyclo}

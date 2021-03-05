@@ -26,6 +26,7 @@
         "bootstrap-material-design": "^4.1.1",
         "date-fns": "^2.16.1",
         "dateformat": "^4.5.0",
+        "dotenv": "^8.2.0",
         "formik": "^2.2.6",
         "hover.css": "^2.3.2",
         "jquery": "^3.5.1",

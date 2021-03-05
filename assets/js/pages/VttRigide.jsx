@@ -10,8 +10,6 @@ import '../../styles/routeStyle.css';
 const VttRigide = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("bleu");
     const[prix,setPrix] = useState(1399);
-    const[submitForm,setSubmitForm]=useState(false);
-
     const[dataBike,setDataBike]=useState({
         type : "Vtt",
         cadre : "XRigide",
@@ -48,7 +46,7 @@ const VttRigide = ({panier,prevPanier}) => {
                         : changeColorBike == "gris" ? rigidegris
                         : rigiderougejaune
                         } 
-                        alt="imagecadre" class="img-thumbnail"/>
+                        alt="imagecadre" className="img-thumbnail"/>
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> X-Rigide</h6>
@@ -82,8 +80,6 @@ const VttRigide = ({panier,prevPanier}) => {
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeBleu={rigidebleu}

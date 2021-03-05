@@ -11,7 +11,6 @@ import BandeauMenu from "../component/BandeauMenu";
 const RouteBike = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("bleu");
     const[prix,setPrix] = useState(1699);
-    const[submitForm,setSubmitForm]=useState(false);
 
     const[dataBike,setDataBike]=useState({
         type : "Aero",
@@ -49,7 +48,7 @@ const RouteBike = ({panier,prevPanier}) => {
                         : changeColorBike == "orange" ? sharporange
                         : sharpjaune
                         } 
-                        alt="imagecadre" class="img-thumbnail"/>
+                        alt="imagecadre" className="img-thumbnail"/>
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> Aero </h6>
@@ -80,12 +79,9 @@ const RouteBike = ({panier,prevPanier}) => {
                         
                 <div className="row"> 
                     <> 
-                    {console.log(submitForm)}
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeBleu={sharpbleu}

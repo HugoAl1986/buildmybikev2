@@ -9,8 +9,6 @@ import rougenoirtri from "../images/triathlon/rougenoirtri.jpg";
 const Triathlon = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("noir");
     const[prix,setPrix] = useState(1599);
-    const[submitForm,setSubmitForm]=useState(false);
-
     const [dataBike,setDataBike]=useState({
         modele : "TriPowa",
         type : "Triathlon",
@@ -42,7 +40,7 @@ const Triathlon = ({panier,prevPanier}) => {
                         : rougenoirtri
                         
                         } 
-                        alt="imagecadre" class="img-thumbnail"/>
+                        alt="imagecadre" className="img-thumbnail"/>
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> Tri-Powa </h6>
@@ -75,8 +73,6 @@ const Triathlon = ({panier,prevPanier}) => {
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeNoir={noirtri}

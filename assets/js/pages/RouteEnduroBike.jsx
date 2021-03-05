@@ -9,8 +9,6 @@ import jauneenduro from "../images/endurobike/jauneenduro.jpg";
 const RouteEnduroBike = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("blanc");
     const[prix,setPrix] = useState(1299);
-    const[submitForm,setSubmitForm]=useState(false);
-
     const [dataBike,setDataBike]=useState({
         modele : "Enduro",
         type : "Enduro",
@@ -43,7 +41,7 @@ const RouteEnduroBike = ({panier,prevPanier}) => {
                         : jauneenduro
                         
                         } 
-                        alt="imagecadre" class="img-thumbnail"/>
+                        alt="imagecadre" className="img-thumbnail"/>
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> Enduro </h6>
@@ -76,8 +74,6 @@ const RouteEnduroBike = ({panier,prevPanier}) => {
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeBlanc={blancenduro}

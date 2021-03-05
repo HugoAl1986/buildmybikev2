@@ -82,8 +82,6 @@ const VttSusp = ({panier,prevPanier}) => {
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
-                        submitForm={submitForm} 
-                        setSubmitForm={setSubmitForm} 
                         prix={prix}
                         setPrix={setPrix}
                         bikeBleuNoir={suspbleunoir}
