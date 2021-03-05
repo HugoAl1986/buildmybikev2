@@ -49,7 +49,7 @@ const RouteEnduroBike = ({panier,prevPanier}) => {
                         <h6 className="row text-uppercase"> Enduro </h6>
                         <p className="row pt-4 presentation"> Ce cadre Enduro est parfait pour cyclotouristes ou cyclistes qui souhaitent profiter d'un vélo tout confort.</p>
                         <div className="row pt-4">
-                        <h4 className=""> Vélo complet à partir de  <span className="prix"> 1299.00 &euro; </span> TTC </h4>
+                        <h4 className=""> Vélo complet à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
                         </div>
                         <div className="row pt-5">
                             <hr className="d-inline col-2" /> 

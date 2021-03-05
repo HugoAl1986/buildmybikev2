@@ -54,7 +54,7 @@ const VttSusp = ({panier,prevPanier}) => {
                         <h6 className="row text-uppercase"> X-Susp</h6>
                         <p className="row pt-4 presentation"> Ce cadre VTT en fibre de carbone T800 vous aidera dans les terrains les plus escarpés et difficils, pour gravir les plus hauts sommets et vous poussera sur les plus longues distances.</p>
                         <div className="row pt-4">
-                        <h4 className=""> Vélo complet à partir de  <span className="prix"> 1499.00 &euro; </span> TTC </h4>
+                        <h4 className=""> Vélo complet à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
                         </div>
                         <div className="row pt-5">
                             <hr className="d-inline col-2" /> 

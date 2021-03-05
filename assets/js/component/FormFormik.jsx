@@ -172,8 +172,8 @@ const FormFormik = (
                             </div>
                             <div className="col-6 text-center">                            
                                 <div className="mt-5 pt-5">
-                                    <h5 className="mt-4"> Prix total TTC : <span className="prix" >{values.freins == "disque" ? values.prix = prix+300 : values.prix = newPrix} &euro;  </span>  </h5>
-                                    <button type="submit" onClick={() => resetForm(initialValues)} id="ajoutPanier" className="btn btn-primary mt-4">AJOUTER PANIER</button> 
+                                    <h5 className="mt-4"> Prix total TTC : <span className="prix" >{values.freins == "disques" ? values.prix = prix+300 : values.prix = newPrix} &euro;  </span>  </h5>
+                                    <button type="submit" id="ajoutPanier" className="btn btn-primary mt-4">AJOUTER PANIER</button> 
                                 </div>
                             </div> 
                         </div>                       
