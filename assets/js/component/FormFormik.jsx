@@ -1,31 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
 
 
 const FormFormik = (
-    {panier,prix,submitForm,setSubmitForm,prevPanier,
+    {panier,prix,prevPanier,submitForm,setSubmitForm,
     bikeBleu,bikeNoirJaune,bikeRougeNoir,bikeOrange,bikeVert,bikeNoir,bikeRouge,bikeJaune,bikeRougeJaune,bikeBlanc,bikeGris,bikeBleuNoir,dataCouleur,dataBike}) => {
 
     const newPrix = prix;
-       
+       const [submitData,setSubmitData]=useState("donnée");
         
     return (
         <Formik
                     initialValues={{ taille: '', couleur: '', finition: '', blocage:'', freins:'',prix:prix }}
                     validationSchema={Yup.object({
-                        taille: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
-                        couleur: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
-                        finition: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
-                        blocage: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
-                        freins: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
+                        taille: Yup.string().matches(/(S|M|L|XL)/, {message : "Veuillez choisir une taille !" })
+                        .required("Veuillez choisir une taille !"),
+                        couleur: Yup.string().max(15,"Veuillez choisir une couleur !")
+                        .required("Veuillez choisir une couleur !"),
+                        finition: Yup.string().matches(/(brillant|mat)/, {message : "Veuillez choisir une finition !"})
+                        .required('Veuillez choisir une finition !'),
+                        blocage: Yup.string().matches(/(rapide|traversant)/, {message : "Veuillez choisir un type de blocage !"})
+                        .required("Veuillez choisir un type de blocage !"),
+                        freins:  Yup.string().matches(/(disques|patins)/, {message : "Veuillez choisir un type de freins !"})
+                        .required("Veuillez choisir un type de freins !"),
                     })}
-                    onSubmit={(values) => {
+                    onSubmit= {(values,{ resetForm }) => {
                         
                         const couleur = values.couleur
                        if(values.couleur =="bleu")
@@ -52,6 +52,8 @@ const FormFormik = (
                             {values.couleur = bikeBleuNoir}
                         else if (values.couleur == "vert")
                             {values.couleur = bikeVert}
+                            resetForm();
+                        
                       
                       
                         const newData = {
@@ -71,8 +73,10 @@ const FormFormik = (
                         }
                         console.log(newData);
                         panier([...prevPanier, newData]) 
-                        setSubmitForm(true)
-                        setSubmitForm(false) 
+                        formik.resetForm({})
+                        
+                        
+                        
                         
                     }}     
                     >    
@@ -81,6 +85,8 @@ const FormFormik = (
 
             ( 
                 <>
+                
+                {console.log(values)}
                     <Form className="form-group pl-5 pt-5 pb-4 col-12" onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="col-6">
@@ -92,8 +98,8 @@ const FormFormik = (
                                         <div className="is-invalid">
                                             <label className="pt-2 pb-2">TAILLE </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "taille" 
-                                                    className={touched.taille && errors.taille ? "custom-select is-invalid" :"custom-select"} 
-                                                    value={submitForm == true ? values.taille = "" : values.taille} >
+                                                    className={ touched.taille && errors.taille ? "custom-select is-invalid" : "custom-select"}
+                                                    value={values.taille} >
                                                     <option defaultValue> Choisis ta taille</option>
                                                     <option value="S">S</option>
                                                     <option value="M">M</option>
@@ -107,7 +113,7 @@ const FormFormik = (
                                     <div className="is-invalid">
                                             <label className="pt-2 pb-2">Couleur </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "couleur" className={touched.couleur && errors.couleur? "custom-select is-invalid" : "custom-select"}
-                                                value={submitForm == true ? values.couleur = "" : values.couleur} >
+                                                value={values.couleur} >
                                                     <option defaultValue> Choisis ta couleur</option>
                                                     {dataCouleur.map((data) => 
                                                         <option key={data.id} value={data.couleur}>{data.couleur}</option>
@@ -124,9 +130,9 @@ const FormFormik = (
                                         <div className="is-invalid">
                                             <label className="pt-4 pb-2">FREINS </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "freins" className={touched.freins && errors.freins ? "custom-select is-invalid" : "custom-select"} 
-                                            value={submitForm == true ? values.freins = "" : values.freins}>
+                                            value={values.freins}>
                                                     <option defaultValue> Choisis ton type de freins</option>
-                                                    <option value="disque">disques (+300 &euro;)</option>
+                                                    <option value="disques">disques (+300 &euro;)</option>
                                                     <option value="patins">patins</option>
                                             </Field>
                                         </div>
@@ -137,7 +143,7 @@ const FormFormik = (
                                         <div className="is-invalid">
                                             <label className="pt-4 pb-2">Type de blocage </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "blocage" className={touched.blocage && errors.blocage ? "custom-select is-invalid" : "custom-select"}
-                                                    value={submitForm == true ? values.blocage = "" : values.blocage}>
+                                                    value={values.blocage} >
                                                     <option defaultValue> Choisis ton blocage</option>
                                                     <option value="rapide">rapide</option>
                                                     <option value="traversant">traversant</option>
@@ -153,7 +159,7 @@ const FormFormik = (
                                             <Field as="select" 
                                                     name = "finition" 
                                                     className={ touched.finition && errors.finition ? "custom-select is-invalid" : "custom-select"}
-                                                    value={submitForm == true ? values.finition = "" : values.finition}
+                                                    value={values.finition}
                                                    >
                                                     <option defaultValue> Choisis ta finition</option>
                                                     <option value="brillant">brillant</option>
@@ -167,7 +173,7 @@ const FormFormik = (
                             <div className="col-6 text-center">                            
                                 <div className="mt-5 pt-5">
                                     <h5 className="mt-4"> Prix total TTC : <span className="prix" >{values.freins == "disque" ? values.prix = prix+300 : values.prix = newPrix} &euro;  </span>  </h5>
-                                    <button type="submit" id="ajoutPanier" className="btn btn-primary mt-4">AJOUTER PANIER</button> 
+                                    <button type="submit" onClick={() => resetForm(initialValues)} id="ajoutPanier" className="btn btn-primary mt-4">AJOUTER PANIER</button> 
                                 </div>
                             </div> 
                         </div>                       

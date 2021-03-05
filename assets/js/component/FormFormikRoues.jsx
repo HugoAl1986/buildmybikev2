@@ -14,12 +14,12 @@ const FormFormik = (
                     initialValues={{ modele:'', freins:'',prix:prix }}
                     validationSchema={Yup.object({
                        
-                        modele: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
-                        freins: Yup.string()
-                        .required('Vous devez sélectionner le bon champs !'),
+                        modele: Yup.string().matches(/(30mm|38mm|50mm|80mm)/,{message:'Veuillez choisir un modèle !'})
+                        .required('Veuillez choisir un modèle !'),
+                        freins: Yup.string().matches(/(disques|patins)/,{message:'Veuillez choisir un type de freins !'})
+                        .required('Veuillez choisir un type de freins !'),
                     })}
-                    onSubmit={(values) => {
+                    onSubmit={(values,{resetForm}) => {
                         
                         const modele = values.modele
                        if(values.modele =="30mm")
@@ -44,8 +44,8 @@ const FormFormik = (
                         }
                         console.log(newData);
                         panier([...prevPanier, newData]) 
-                        setSubmitForm(true)
-                        setSubmitForm(false) 
+                        resetForm();
+                       
                         
                     }}     
                     >    
@@ -65,7 +65,7 @@ const FormFormik = (
                                     <div className="is-invalid">
                                             <label className="pt-2 pb-2">Modele </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "modele" className={touched.modele && errors.modele? "custom-select is-invalid" : "custom-select"}
-                                                value={submitForm == true ? values.modele = "" : values.modele} >
+                                                value={values.modele} >
                                                     <option defaultValue> Choisis ta hauteur de jante</option>
                                                     {dataHauteur.map((data) => 
                                                         <option key={data.id} value={data.Hauteur}>{data.Hauteur}</option>
@@ -82,9 +82,9 @@ const FormFormik = (
                                         <div className="is-invalid">
                                             <label className="pt-4 pb-2">FREINS </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "freins" className={touched.freins && errors.freins ? "custom-select is-invalid" : "custom-select"} 
-                                            value={submitForm == true ? values.freins = "" : values.freins}>
+                                            value={values.freins}>
                                                     <option defaultValue> Choisis ton type de freins</option>
-                                                    <option value="disque">disques (+300 &euro;)</option>
+                                                    <option value="disques">disques (+300 &euro;)</option>
                                                     <option value="patins">patins</option>
                                             </Field>
                                         </div>

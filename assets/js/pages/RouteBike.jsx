@@ -77,9 +77,10 @@ const RouteBike = ({panier,prevPanier}) => {
                 </div> 
 
                 {/* Formulaire Formik */}
-
+                        
                 <div className="row"> 
                     <> 
+                    {console.log(submitForm)}
                     <FormFormik 
                         panier={panier} 
                         prevPanier={prevPanier}
