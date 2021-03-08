@@ -89,12 +89,12 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
     return ( 
         <>
         
-        <div className="container-fluid">
+        <div className={panier.length==0 ? "container-fluid pb-5 mb-5":"container-fluid mb-1"}>
           <ModalSuccess message = "Bravo !!! Votre commande a bien été passée" ModalSuccessAPP={ModalSuccessAPP} setModalSuccessAPP={setModalSuccessAPP} /> 
           <ModalError message = "Vous devez vous identifier pour pouvoir passer une commande " isAuthenticated = {isAuthenticated} ModalErrorAPP={ModalErrorAPP} setModalErrorAPP={setModalErrorAPP} /> 
           <ModalErrorServeur isAuthenticated = {isAuthenticated} modalServError={modalServError} setModalServError={setModalServError} /> 
 
-            <div className="row pt-5 pb-5 pl-4 text-uppercase">
+            <div className="row pt-5 mt-3 pb-5 pl-4 text-uppercase">
                 <h3> mon Panier </h3>
             </div> 
             <div className="row pl-4 pb-4 pr-4">

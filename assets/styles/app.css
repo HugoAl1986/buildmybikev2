@@ -123,8 +123,3 @@ input::placeholder{
     box-shadow:0px 0px 0px 2px #414F8E inset; 
    
 }
-body::after{
-    display:none;
-}
-
-
