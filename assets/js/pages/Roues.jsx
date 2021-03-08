@@ -50,7 +50,7 @@ const VttSusp = ({panier,prevPanier}) => {
                     </div>
                     <div className="col-6 pt-4">
                         <h6 className="row text-uppercase"> Roues</h6>
-                        <p className="row pt-4 presentation"> 4 modèles de roues selon le profil que vous souhaitez pleine vitesse, terrains escarpées ou moyenne montagne ou très haute montagne.</p>
+                        <p className="row pt-4 presentation"> 4 modèles de roues selon le profil que vous souhaitez pleine vitesse, terrains escarpés, moyenne montagne ou très haute montagne.</p>
                         <div className="row pt-4">
                         <h4 className=""> Roues à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
                         </div>
