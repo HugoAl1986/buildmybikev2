@@ -17,7 +17,7 @@ const Footer = () => {
                     <a className="pl-2" href="mailto:buildmybike@gmail.com">buildmybike@gmail.com</a>
                 </p>
             </div>
-            <div className="row copy">
+            <div className="row copy" id="footercontact">
                <p className="p-3 ml-1 m-0"> &copy; 2021 Crée par HugoAl. Tous droits réservés</p>
             </div>
         </>

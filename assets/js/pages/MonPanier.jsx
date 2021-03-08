@@ -90,10 +90,14 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
         <>
         
         <div className="container-fluid">
+          <ModalSuccess message = "Bravo !!! Votre commande a bien été passée" ModalSuccessAPP={ModalSuccessAPP} setModalSuccessAPP={setModalSuccessAPP} /> 
+          <ModalError message = "Vous devez vous identifier pour pouvoir passer une commande " isAuthenticated = {isAuthenticated} ModalErrorAPP={ModalErrorAPP} setModalErrorAPP={setModalErrorAPP} /> 
+          <ModalErrorServeur isAuthenticated = {isAuthenticated} modalServError={modalServError} setModalServError={setModalServError} /> 
+
             <div className="row pt-5 pb-5 pl-4 text-uppercase">
                 <h3> mon Panier </h3>
             </div> 
-            <div className="row pl-4 pb-4">
+            <div className="row pl-4 pb-4 pr-4">
                 <table className="table table-bordered">
                     <thead>
                         <tr className="row">
@@ -106,7 +110,7 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
                     </thead>
                     <tbody>
                     {panier.length == 0 ? 
-                    <tr className=" row text-center font-italic">
+                    <tr className="row text-center font-italic">
                         <td className="col-12 d-flex align-items-center justify-content-center">Vous n'avez rien dans votre panier !!</td>
                     </tr> 
                     : panier.map((data,index) =>
@@ -158,7 +162,7 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
                 </table>
             </div> 
             { panier.length !== 0 && 
-                <div className="pl-4 pb-4 row">
+                <div className="pl-4 pb-4 pr-4 row">
                     <div className="col-12 d-flex justify-content-end pr-0">
                         <button type="button" 
                         className="btn btn-primary text-uppercase" 
@@ -170,10 +174,7 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
                     </div>
                 </div>
             } 
-            
-          <ModalSuccess message = "Bravo !!! Votre commande a bien été passée" ModalSuccessAPP={ModalSuccessAPP} setModalSuccessAPP={setModalSuccessAPP} /> 
-          <ModalError message = "Vous devez vous identifier pour pouvoir passer une commande " isAuthenticated = {isAuthenticated} ModalErrorAPP={ModalErrorAPP} setModalErrorAPP={setModalErrorAPP} /> 
-          <ModalErrorServeur isAuthenticated = {isAuthenticated} modalServError={modalServError} setModalServError={setModalServError} /> 
+        
         </div> 
         </>
      );
