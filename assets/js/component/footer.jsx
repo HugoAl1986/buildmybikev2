@@ -14,7 +14,7 @@ const Footer = () => {
                     <img src={phone} className="img-fluid" width="25px" height="25px" />
                     <span className="pl-2 pr-2"> 06 77 90 18 46 </span> 
                     <img src={mail} className="img-fluid" width="25px" height="25px"/>
-                    <a className="pl-2" href="mailto:hugo.arcal@gmail.com">buildmybike@gmail.com</a>
+                    <a className="pl-2" href="mailto:buildmybike@gmail.com">buildmybike@gmail.com</a>
                 </p>
             </div>
             <div className="row copy">
