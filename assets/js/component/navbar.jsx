@@ -68,7 +68,7 @@ const Navbar = ({isAuthenticated, onLogout, history, panierBox}) => {
                                             <button className="dropdown-item"  onClick={HandleDeconnection}> Deconnexion</button>
                                         </div> 
                                     </> : 
-                                     <NavLink to="/connexion" className="nav-link" style = {Style}><img className="h-100 d-inline-block img-fluid " src={iconuser} alt="iconuser" width="40" height="40" /> {AxiosCenter.getPrenom()} </NavLink>   
+                                     <NavLink to="/connexion" className="nav-link font-weight-bold" style = {Style}><img className="h-100 d-inline-block img-fluid " src={iconuser} alt="iconuser" width="40" height="40" /> {AxiosCenter.getPrenom()} </NavLink>   
                                            }
                                   
                                 </li> 
