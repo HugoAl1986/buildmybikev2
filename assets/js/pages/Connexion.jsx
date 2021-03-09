@@ -44,7 +44,7 @@ function handleChange (event) {
         <div className="container-fluid p-5">
             
             <h2 className="text-uppercase" style = {{color:"black"}}> MON COMPTE </h2>
-            <div className="row">
+            <div className="row d-flex align-items-center">
                 <div className="col-6 pt-1">
                     <h6 className = "text-uppercase pt-4" style = {{color : "black"}}> se connecter à votre compte</h6>
                     <form onSubmit={handleSubmit} >
@@ -89,7 +89,6 @@ function handleChange (event) {
                 </div>
             </div>
         </div>
-        
     </>    
   );
 }
