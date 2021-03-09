@@ -1,6 +1,7 @@
 import axios from 'axios';
 import JWTDecode from 'jwt-decode';
 import {API_URL} from './config';
+import React from 'react';
 function getClients(){
     return(
         axios.get(API_URL+"clients")
@@ -64,7 +65,7 @@ function getPrenom() {
     const monCompte = "ME CONNECTER";
     if(token) {
         const JWTData = JWTDecode(token);
-        return (`Hey ${JWTData.prenom}`)
+        return <span className="pl-2 font-weight-bold">Hey {JWTData.prenom}</span>
     } else return monCompte;
 }
 

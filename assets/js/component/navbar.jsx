@@ -37,7 +37,7 @@ const Navbar = ({isAuthenticated, onLogout, history, panierBox}) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul className="navbar-nav col-xl-9 col-lg-8 mt-2 mt-lg-0">
+                    <ul className="navbar-nav col-xl-9 col-lg-8 mt-2 mt-lg-0 font-weight-bold">
                     <li className ="nav-item">
                         <NavLink to="/routebike" style = {Style} className ="nav-link text-uppercase">Route</NavLink>
                     </li>
@@ -57,7 +57,7 @@ const Navbar = ({isAuthenticated, onLogout, history, panierBox}) => {
                     <div className="col-xl-3 col-lg-4 pl-0 pr-0">
                             <ul className="navbar-nav justify-content-end">
                                    
-                                <li className="nav-item dropdown pl-3 pr-3" >
+                                <li className="nav-item dropdown pl-3 pr-3 " >
                                     {isAuthenticated ? 
                                     <>
                                         <button className="nav-link" id="buttonnavcycliste" style = {Style} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
