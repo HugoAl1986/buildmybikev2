@@ -31,7 +31,8 @@ const RouteEnduroBike = ({panier,prevPanier}) => {
      }
     } 
     return ( 
-        <>
+        
+        <div className="container-total-route">
              <BandeauMenu idBandeau = "Aero" velo1= "aero" velo2="enduro" Titre="Route" url1="/routebike" url2="/routeendurobike" />
              <div className="row container-global-route" >
                
@@ -85,7 +86,7 @@ const RouteEnduroBike = ({panier,prevPanier}) => {
             
                     </>
                 </div>
-        </>
+        </div>
      );
 }
 
