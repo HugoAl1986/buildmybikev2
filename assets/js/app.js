@@ -37,9 +37,12 @@ const NavbarWithRouter = withRouter(Navbar);
 const [modalAvertissementAPP,setModalAvertissementAPP] = useState(true)
 
 
-    return <HashRouter>  
+    return(
+
+    <>
+    <HashRouter>  
             
-           <div className="container-fluid pl-0 pr-0 m-0 h-100">
+           <div className="container-app-global">
            <ModalAvertissement 
                 modalAvertissementAPP={modalAvertissementAPP}
                 setModalAvertissementAPP={setModalAvertissementAPP}
@@ -63,9 +66,13 @@ const [modalAvertissementAPP,setModalAvertissementAPP] = useState(true)
                 </Switch>
                   
             </div> 
-            <Footer/>  
+             
                           
            </HashRouter>
+           <Footer/>
+           </> 
+    )
+           
 };
 const rootElement = document.querySelector('#app');
 ReactDom.render(<App />, rootElement);

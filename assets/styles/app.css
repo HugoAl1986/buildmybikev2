@@ -2,8 +2,13 @@
 body {
     font-family: 'Nanum Gothic', sans-serif;
     color : #414F8E;
-    margin:0;
-    height:100%;   
+    margin:0;  
+}
+.container-app-global{
+   padding-left:0;
+   padding-right:0;
+   margin:0;
+   min-height: 100vh;
 }
 
 a{
