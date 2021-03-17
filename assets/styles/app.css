@@ -1,10 +1,20 @@
-
+html{
+   height:100%;
+}
+#root{
+   height:100%;
+}
+#app{
+   height:100%;
+}
 body {
     font-family: 'Nanum Gothic', sans-serif;
     color : #414F8E;
     margin:0;
+    height:100%
     
 }
+
 a{
     color:#414F8E;
 }

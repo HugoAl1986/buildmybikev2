@@ -39,7 +39,7 @@ const [modalAvertissementAPP,setModalAvertissementAPP] = useState(true)
 
     return <HashRouter>  
             
-           <div className="container-fluid pl-0 pr-0 m-0 h-100">
+           <div className="container-fluid pl-0 pr-0 m-0">
            <ModalAvertissement 
                 modalAvertissementAPP={modalAvertissementAPP}
                 setModalAvertissementAPP={setModalAvertissementAPP}
