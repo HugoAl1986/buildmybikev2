@@ -38,9 +38,8 @@ const VttSusp = ({panier,prevPanier}) => {
     return ( 
         <>
             <BandeauMenu idBandeau="Roues" velo1 = "Roues" Titre = "Roues" url1 = "/roues" />
-            <div className="row pt-5 pb-5" >
-               
-                    <div className="col-6 text-center" id="imgcadre">
+            <div className="row container-global-route" >             
+                    <div className="col-md-12 col-lg-6 text-center container-image">
                         <img src={changeHauteurRoues == "30mm" ? basse
                         : changeHauteurRoues == "38mm" ? moyenne
                         : changeHauteurRoues == "50mm" ? haute
@@ -48,18 +47,18 @@ const VttSusp = ({panier,prevPanier}) => {
                         } 
                         alt="imagecadre" className="img-thumbnail"/>
                     </div>
-                    <div className="col-6 pt-4">
+                    <div className="col-md-12 col-lg-6 container-description">
                         <h6 className="row text-uppercase"> Roues</h6>
                         <p className="row pt-4 presentation"> 4 modèles de roues selon le profil que vous souhaitez pleine vitesse, terrains escarpés, moyenne montagne ou très haute montagne.</p>
-                        <div className="row pt-4">
-                        <h4 className=""> Roues à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
+                        <div className="row">
+                            <h4> Roues à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
                         </div>
-                        <div className="row pt-5">
-                            <hr className="d-inline col-2" /> 
-                            <h5 className="d-inline col-6 text-center text-uppercase"> Choisis ta couleur</h5> 
-                            <hr className="d-inline col-2"/>
+                        <div className="row">
+                            <hr className="col-md-3" /> 
+                            <h5 className="col-md-4 text-center text-uppercase"> Choisis ta hauteur</h5> 
+                            <hr className="col-md-3"/>
                         </div>
-                        <div className="row pt-4 justify-content-center m-0">
+                        <div className="row pt-4 container-button-roues">
                            <button type="button"  name="30mm" onMouseOver={changeImage}  className="roues d-inline-block">30 mm</button>
                            <button type="button" name="38mm" onMouseOver={changeImage} className="roues d-inline-block"> 38 mm</button>
                            <button type="button" name="50mm" onMouseOver={changeImage} className="roues d-inline-block">50 mm</button>
@@ -67,10 +66,10 @@ const VttSusp = ({panier,prevPanier}) => {
                         </div>
                     </div>
             </div>
-                <div className="row"> 
-                           <div className="col-5 col-sm-5 col-xs-5 pt-4 pb-4"><hr className="hrConfigurateur w-100" /></div>
-                           <div className="col-2 col-sm-2 col-xs-2 pt-4 pb-4 justify-content-center text-center border border-dark"> CONFIGURATEUR </div>
-                           <div className="col-5 col-sm-5 col-xs-5 pt-4 pb-4"> <hr className="hrConfigurateur w-100"/></div>
+                <div className="row container-configurateur"> 
+                        <div className="col-md-5"><hr className="hrConfigurateur" /></div>
+                        <div className="col-md-2 border border-dark"> CONFIGURATEUR </div>
+                        <div className="col-md-5"> <hr className="hrConfigurateur"/></div>
                 </div> 
 
                 {/* Formulaire Formik */}

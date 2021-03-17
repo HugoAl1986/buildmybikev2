@@ -11,3 +11,33 @@
     margin-left:0;
     margin-right:0;
 }
+.footer{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+#footercontact{
+    overflow:hidden;
+}
+.footer p{
+  padding:1rem 2rem;
+  margin-left:1;
+  margin:0;
+}
+@media only screen and (max-width:572px){
+    .footer{
+        justify-content:center;
+    }
+    .footer p span:first-of-type{
+        display:none;
+        justify-content:center
+    }
+    .footer p{
+        padding:1rem 0;
+        width:100%;
+        align-items: center;
+        justify-content: center;
+        display:flex;
+    }
+
+}

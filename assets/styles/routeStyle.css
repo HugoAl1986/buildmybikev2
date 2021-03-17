@@ -1,3 +1,41 @@
+.container-global-route{
+    padding-top:5rem;
+    padding-bottom:5rem;
+}
+.container-description {
+    padding-top:2rem;
+    padding-left:0;
+    padding-right:0;
+}
+.container-description div:first-of-type{
+    padding-top:1rem;
+    
+}
+.container-description div:nth-of-type(2){
+    padding-top:3rem;
+    display:flex;
+    align-items:center;
+}
+.container-description div:nth-of-type(3){
+    padding-top:4rem;
+    text-transform: uppercase;
+}
+.container-configurateur{
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+}
+.container-configurateur div:nth-of-type(2){
+    text-align:center;
+    padding-left:0;
+    padding-right:0;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    align-self:center;
+}
+.container-description div:nth-of-type(2) h5{
+    font-size:medium;
+}
 
 #bandeauMenuAero{
     background-color: #6CA0B2;
@@ -101,8 +139,6 @@
     border: 0;
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    width:50%;
-    margin-left:0;
     margin-top:0.8rem;
 }
 /* Roues */
@@ -240,4 +276,105 @@ sup{
     color: #DCB111;
     box-shadow:0px 0px 0px 2px #DCB111 inset; 
    
+}
+
+
+@media only screen and (max-width:992px){
+    .container-global-route{
+        display:flex;
+        flex-direction:column;
+        padding-top:3rem;
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+    .container-image{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        order:2;
+    }
+   
+    
+    .container-description{
+        display:flex;
+        flex-direction: column;
+        order:1;
+        padding-top:0;
+
+    }
+    .container-description h6 {
+        align-self:center;
+        font-size: medium;
+        font-weight:bold;
+        font-size:large;
+    }
+    .container-description div:first-of-type{
+        display:flex;
+        align-self:center;
+        padding-top:1rem;
+    }
+    .container-description div:first-of-type h4{
+        font-size:medium;
+        align-self:center;
+        text-align:center;
+    }
+    .container-description div:nth-of-type(2){
+        padding-top:2rem;
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+    }
+    .container-description div:nth-of-type(2) hr{
+        display:flex;
+        align-self:center;
+        width:25%;
+        padding-left:0;
+        padding-right:0;
+        
+    }
+    
+    .container-description div:nth-of-type(2) h5{
+        align-self:center;
+        text-align:center;
+        margin-bottom:0;
+        font-size:medium;
+        padding-left:0;
+        padding-right:0;
+        width:50%;
+    }
+    .container-description div:nth-of-type(3){
+        padding-bottom:2rem;
+    }
+    
+    .presentation{
+        align-self:center;
+        text-align:center;
+    }
+    .container-configurateur{
+        display:flex;
+        flex-direction:row;
+    }
+    
+    .container-configurateur div:first-of-type,.container-configurateur div:nth-of-type(3) {
+        padding-left:0;
+        padding-right:0;
+        width:25%;
+        display:flex;
+        align-items:center;
+    }
+    
+    .container-configurateur div:nth-of-type(2){
+        padding-top:1rem;
+        padding-bottom:1rem;
+        width: 50%;
+        text-align:center;
+
+    }
+    .hrConfigurateur{
+        width:100%;
+        display:flex;
+    }
+    .carrebleu,.carrenoir,.roues,.carrevert,.carrenoirjaune,.carrerougenoir,.carrebleufonce,.carreblanc,.carregris,.carrejaune,.carrerouge,.carreorange,.carregris,.carrerougejaune{
+     margin:0 1rem;
+    }
 }

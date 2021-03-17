@@ -5,6 +5,7 @@ import AxiosCenter from '../services/AxiosCenter';
 import Loader from 'react-loader-spinner';
 import ModalSuccess from '../component/Modal/ModalSuccess';
 import ModalError from '../component/Modal/ModalError';
+import '../../styles/inscriptionstyle.css';
 
 const SignupSchema = Yup.object().shape({
   prenom: Yup.string()
@@ -89,7 +90,7 @@ const SignupSchema = Yup.object().shape({
           <ModalSuccess ModalSuccessAPP = {ModalSuccessAPP} setModalSuccessAPP={setModalSuccessAPP} message="Bravo !! Votre inscription a réussie." message2= " Vous allez être redirigé vers la page d'accueil ou vous pourrez vous connecter." />
           <ModalError ModalErrorAPP = {ModalErrorAPP} setModalErrorAPP = {setModalErrorAPP} message = {errorServ} />
 
-         <Form className = "container-fluid p-5" onSubmit={handleSubmit}>
+         <Form className = "container-form" onSubmit={handleSubmit}>
             <h2 className="text-uppercase mb-5" style = {{color : "black"}}> Inscription</h2>
             <div className="row">
                   <div className="col-12">
@@ -97,7 +98,7 @@ const SignupSchema = Yup.object().shape({
                   </div>
             </div>
             <div className="row mb-3">
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                   <label className="form-label">Prénom</label>
                   <Field type="text"  
                         className={touched.prenom == null ? "form-control" : touched.prenom && errors.prenom != null ? "form-control is-invalid" : "form-control is-valid" }
@@ -109,7 +110,7 @@ const SignupSchema = Yup.object().shape({
                             <div className="invalid-feedback" >{errors.prenom}</div>
                       ) : null}
               </div>
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                   <label className="form-label">Nom</label>
                   <Field type="text"  
                         className={touched.nom == null ? "form-control" : touched.nom && errors.nom != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -123,7 +124,7 @@ const SignupSchema = Yup.object().shape({
               </div>
             </div>
             <div className="row mb-3">
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                     <label className="form-label">Email</label>
                     <Field
                             className={touched.email == null ? "form-control" : touched.email && errors.email != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -139,7 +140,7 @@ const SignupSchema = Yup.object().shape({
                             <div className="invalid-feedback" >{errors.email}</div>
                       ) : null}
               </div>
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                       <label className="form-label">Password</label>
                       <Field
                             className={touched.password == null ? "form-control" : touched.password && errors.password != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -174,7 +175,7 @@ const SignupSchema = Yup.object().shape({
                   </div>
               </div>
               <div className="row mb-3">
-                  <div className="col-3">
+                  <div className="col-sm-12 col-md-5 col-xl-3">
                       <label className="form-label">Numero Rue</label>
                       <Field
                             className={touched.numeroRue == null ? "form-control" : touched.numeroRue && errors.numeroRue != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -189,7 +190,7 @@ const SignupSchema = Yup.object().shape({
                             <div className="invalid-feedback" >{errors.numeroRue}</div>
                       ) : null}
                   </div>
-                  <div className="col-9">
+                  <div className="col-sm-12 col-md-7 col-xl-9">
                       <label className="form-label">Nom Rue</label>
                       <Field
                             className={touched.nomRue == null ? "form-control" : touched.nomRue && errors.nomRue != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -206,7 +207,7 @@ const SignupSchema = Yup.object().shape({
                   </div>
               </div>
               <div className="row mb-3">
-                <div className="col-3">
+                <div className="col-xl-3 col-md-5 col-sm-12 ">
                     <label className="form-label">Code Postal</label>
                     <Field
                             className={touched.codePostal == null ? "form-control" : touched.codePostal && errors.codePostal != null ? "form-control is-invalid" : "form-control is-valid"}
@@ -221,7 +222,7 @@ const SignupSchema = Yup.object().shape({
                             <div className="invalid-feedback" >{errors.codePostal}</div>
                       ) : null}
                 </div>
-                <div className="col-9">
+                <div className="col-xl-9 col-md-7 col-sm-12 ">
                       <label className="form-label">Ville</label>
                       <Field
                             className={touched.ville == null ? "form-control" : touched.ville && errors.ville != null ? "form-control is-invalid" : "form-control is-valid"}

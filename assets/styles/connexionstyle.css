@@ -1,0 +1,124 @@
+.container-global{
+    padding:5rem;
+    padding-bottom:3rem;
+}
+.container-global input {
+    font-size:13px;
+}
+.container-connexion h6{
+    padding-top:3rem;
+}
+.container-connexion{
+    padding-top:1rem;
+}
+.container-connexion form div input{
+    width:75%;
+}
+.btnConnexion{
+    background-color:rgb(29, 175, 29);
+    padding : 0.5rem 1.5rem;
+    border-radius:5px;
+    border:none;
+    font-size:0.8rem;
+    font-weight:bold;
+    text-transform: uppercase;
+    box-shadow:0px 0px 0px 0px;
+    outline:0px;
+   
+    
+}
+.btnConnexion:hover{
+    background-color:white;
+    color: rgb(29, 175, 29);
+    box-shadow:0px 0px 0px 2px rgb(29, 175, 29) inset; 
+   
+}
+.container-inscription{
+    padding-top:1rem;
+}
+.container-inscription h6{
+    padding-top:3rem;
+}
+
+.container-global{
+        padding: 3rem 2rem;
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+    .container-global{
+        padding-top:3rem;
+        padding-left:1rem;
+        padding-right:1rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        font-size:0.8rem;
+    }
+    .container-global h2{
+        text-align:center;
+
+    }
+    .container-connexion{
+        padding-left:0;
+        padding-right:0;
+    }
+    .container-connexion h6{
+       text-align:center;
+       padding-top:1rem;
+    }
+    .container-connexion form div label{
+        padding-top:1rem;
+    }
+    .container-connexion form div input{
+        width:100%;
+    }
+    .container-connexion form div:first-child{
+        width:100%;
+        margin-bottom:0;
+    }
+    .container-connexion form div:nth-child(2) input{
+        width:100%;
+        margin-bottom:2rem;
+    }
+    .container-inscription{
+        display:flex;
+        flex-direction:column;
+        padding-left:0;
+    }
+    .container-inscription ul{
+        margin-bottom:2rem;
+    }
+    .container-inscription h6{
+        align-self: center;
+        padding-top:2rem;
+    }
+    .btnConnexion{
+        width:100%;
+    }
+}
+@media only screen and (min-width : 577px) and (max-width : 992px){
+
+    .btnConnexion{
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+    }
+}
+@media only screen and (min-width: 993px){
+    .container-inscription .btnConnexion{
+        margin-top:1rem;
+    }
+    .container-global{
+        padding: 3rem 2rem;
+        font-size:13px;
+    }
+    .container-global span {
+        font-size:13px;
+    }
+    
+}
+

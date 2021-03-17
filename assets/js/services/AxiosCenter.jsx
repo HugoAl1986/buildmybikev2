@@ -62,11 +62,10 @@ function setup(){
 // Récupérer le prénom et l'afficher dans la Navbar
 function getPrenom() {
     const token = window.sessionStorage.getItem("authToken");
-    const monCompte = "ME CONNECTER";
     if(token) {
         const JWTData = JWTDecode(token);
-        return <span className="pl-2 font-weight-bold">Hey {JWTData.prenom}</span>
-    } else return monCompte;
+        return <span className="span-prenom">Hey {JWTData.prenom}</span>
+    } else return <span className="span-prenom"> Me connecter </span>
 }
 
 

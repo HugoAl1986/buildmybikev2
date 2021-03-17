@@ -10,16 +10,16 @@ import '../../styles/routeStyle.css';
 const VttSusp = ({panier,prevPanier}) => {
     const[changeColorBike, setChangeColorBike] = useState("noir");
     const[prix,setPrix] = useState(1499);
-    const[submitForm,setSubmitForm]=useState(false);
+    const[submitForm]=useState(false);
 
-    const[dataBike,setDataBike]=useState({
+    const[dataBike]=useState({
         type : "Vtt",
         cadre : "XSusp",
         modele : "X-Susp",
         url : "kit_vtts"
     })
 
-    const [dataCouleur,setDataCouleur]=useState([
+    const [dataCouleur]=useState([
         {id : 1, couleur : "noir"},
         {id : 2, couleur : "rouge"},
         {id : 3, couleur : "jaune"},
@@ -40,9 +40,8 @@ const VttSusp = ({panier,prevPanier}) => {
     return ( 
         <>
             <BandeauMenu idBandeau="VTT" velo1 = "X-Rigide" velo2 = "X-Susp" Titre = "VTT" url1 = "/vttrigide" url2="/vttsusp" />
-            <div className="row pt-5 pb-5" >
-               
-                    <div className="col-6 text-center">
+            <div className="row container-global-route" >             
+                <div className="col-md-12 col-lg-6 text-center container-image">
                         <img src={changeColorBike == "noir" ? suspnoir 
                         : changeColorBike == "rouge" ? susprouge
                         : changeColorBike == "jaune" ? suspjaune
@@ -50,16 +49,16 @@ const VttSusp = ({panier,prevPanier}) => {
                         } 
                         alt="imagecadre" className="img-thumbnail"/>
                     </div>
-                    <div className="col-6 pt-4">
+                    <div className="col-md-12 col-lg-6 container-description">
                         <h6 className="row text-uppercase"> X-Susp</h6>
                         <p className="row pt-4 presentation"> Ce cadre VTT en fibre de carbone T800 vous aidera dans les terrains les plus escarpés et difficils, pour gravir les plus hauts sommets et vous poussera sur les plus longues distances.</p>
-                        <div className="row pt-4">
-                        <h4 className=""> Vélo complet à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
+                        <div className="row">
+                            <h4 className=""> Vélo complet à partir de  <span className="prix"> {prix} &euro; </span> TTC </h4>
                         </div>
-                        <div className="row pt-5">
-                            <hr className="d-inline col-2" /> 
-                            <h5 className="d-inline col-6 text-center text-uppercase"> Choisis ta couleur</h5> 
-                            <hr className="d-inline col-2"/>
+                        <div className="row">
+                            <hr className="col-md-3" /> 
+                            <h5 className="col-md-4 text-center text-uppercase"> Choisis ta couleur</h5> 
+                            <hr className="col-md-3"/>
                         </div>
                         <div className="row pt-4 justify-content-center m-0">
                            <button type="button"  name="noir" onMouseOver={changeImage}  className="carrenoir d-inline-block"></button>
@@ -69,10 +68,10 @@ const VttSusp = ({panier,prevPanier}) => {
                         </div>
                     </div>
             </div>
-                <div className="row"> 
-                           <div className="col-5 col-sm-5 col-xs-5 pt-4 pb-4"><hr className="hrConfigurateur w-100" /></div>
-                           <div className="col-2 col-sm-2 col-xs-2 pt-4 pb-4 justify-content-center text-center border border-dark"> CONFIGURATEUR </div>
-                           <div className="col-5 col-sm-5 col-xs-5 pt-4 pb-4"> <hr className="hrConfigurateur w-100"/></div>
+                <div className="row container-configurateur"> 
+                    <div className="col-md-5"><hr className="hrConfigurateur" /></div>
+                    <div className="col-md-2 border border-dark"> CONFIGURATEUR </div>
+                    <div className="col-md-5"> <hr className="hrConfigurateur"/></div>
                 </div> 
 
                 {/* Formulaire Formik */}

@@ -94,76 +94,69 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
           <ModalError message = "Vous devez vous identifier pour pouvoir passer une commande " isAuthenticated = {isAuthenticated} ModalErrorAPP={ModalErrorAPP} setModalErrorAPP={setModalErrorAPP} /> 
           <ModalErrorServeur isAuthenticated = {isAuthenticated} modalServError={modalServError} setModalServError={setModalServError} /> 
 
-            <div className="row pt-5 mt-3 pb-5 pl-4 text-uppercase">
+            <div className="row container-titre">
                 <h3> mon Panier </h3>
             </div> 
-            <div className="row pl-4 pb-4 pr-4">
-                <table className="table table-bordered">
-                    <thead>
-                        <tr className="row">
-                        <th className="col-1 text-center">#</th>
-                        <th className="col-2 text-center">Photo Produit</th>
-                        <th className="col-5 text-center">Description</th>
-                        <th className="col-2 text-center">Montant</th>
-                        <th className="col-2 text-center">Supprimer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {panier.length == 0 ? 
-                    <tr className="row text-center font-italic">
-                        <td className="col-12 d-flex align-items-center justify-content-center">Vous n'avez rien dans votre panier !!</td>
-                    </tr> 
-                    : panier.map((data,index) =>
-                   
-                        <tr key={index} className="row">
-                                <td scope="row" className="col-1 d-flex align-items-center justify-content-center font-weight-bold">{index+1}</td>
-                                <td className="col-2 d-flex align-items-center">
-                                    <img src={data.type !== "Roues" ? data.couleurURL : data.modeleURL} id="imagepanier" className="img-fluid"/>
-                                </td>
-                                <td className="col-5 d-flex align-items-center justify-content-left">
-                                    {data.type !== "Roues" ? 
-                                        <p className="text-left">
-                                            Vélo {data.type} à {data.freins} <br></br>
-                                            couleur : {data.couleur}<br></br>
-                                            Taille : {data.taille} <br></br>
-                                            Finition : {data.finition}<br></br>
-                                            blocage : {data.blocage}<br></br>
-                                                
-                                        </p> : 
-                                        <p classeName= "text-left"> 
-                                            Roues à {data.freins} <br></br>
-                                            Hauteur : {data.modele} <br></br>
-                                            Couleur : {data.couleur}
-                                        </p>
-                                    }
-                                </td>
-                                <td className="col-2 d-flex align-items-center justify-content-center text-center">
-                                    {data.prix} &euro;</td>
-                                <td className="col-2 d-flex align-items-center justify-content-center text-center">
-                                    <button type="button" onClick = {()=>supprimerDataPanier(index)} id="supprimerpanier" className="hvr-grow"> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
-                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>                           
-                        )}
-                            {panier.length !== 0 && 
-                            <tr className="row justify-content-end">
-                                <td className="col-2 d-flex align-items-center justify-content-end"> 
-                                    Prix Total TTC : 
-                                </td>
-                                <td className="col-2 font-weight-bold d-flex align-items-center justify-content-center"> 
-                                    {somme} &euro;
-                                </td>
-                            </tr> 
-                            }                      
-                     </tbody>                   
-                </table>
-            </div> 
-            { panier.length !== 0 && 
-                <div className="pl-4 pb-4 pr-4 row">
-                    <div className="col-12 d-flex justify-content-end pr-0">
+            <div className="row container-global-panier">
+                <div className="row tableau-header">
+                    <div className="col-12 col-md-1">Produit</div>
+                    <div className="col-2">Photo Produit</div>
+                    <div className="col-5">Description</div>
+                    <div className="col-2">Montant</div>
+                    <div className="col-2">Supprimer</div>
+                </div>
+
+                {panier.length ==  0 ? 
+                <div className="row-panier-null col-12 ">
+                    Vous n'avez rien dans votre panier !!
+                </div> : 
+                 panier.map((data,index) =>
+                 <div key={index} className="container-body-panier row">
+                    <div className="col-12 col-md-1 font-weight-bold">{index+1}</div>
+                    <div className="col-md-2 col-12">
+                        <img src={data.type !== "Roues" ? data.couleurURL : data.modeleURL} id="imagepanier"/>
+                    </div>
+                    <div className="col-8 col-md-5">
+                        {data.type !== "Roues" ? 
+                            <p className="text-left">
+                                Vélo {data.type} à {data.freins} <br></br>
+                                couleur : {data.couleur}<br></br>
+                                Taille : {data.taille} <br></br>
+                                Finition : {data.finition}<br></br>
+                                blocage : {data.blocage}<br></br>
+                                    
+                            </p> : 
+                            <p classeName= "text-left"> 
+                                Roues à {data.freins} <br></br>
+                                Hauteur : {data.modele} <br></br>
+                                Couleur : {data.couleur}
+                            </p>
+                        }
+                    </div>
+                    <div className="col-4 col-md-2">{data.prix} &euro;</div>
+                    <div className="col-md-2 col-12">
+                        <button type="button" onClick = {()=>supprimerDataPanier(index)} id="supprimerpanier" className="hvr-grow"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                 </div>
+                 )}
+                {panier.length !== 0 && 
+                <div className="row container-prix">
+                    <div className="col-sm-0 col-md-8"> test</div>
+                    <div className="col-6 col-sm-6 col-md-2"> 
+                        Prix Total TTC : 
+                    </div>
+                    <div className="col-6 col-sm-6 col-md-2"> 
+                        {somme} &euro;
+                    </div>
+                </div> 
+                } 
+                 { panier.length !== 0 && 
+                <div className="container-bouton-commander row">
+                    <div className="col-12">
                         <button type="button" 
                         className="btn btn-primary text-uppercase" 
                         id="passerCommande" 
@@ -173,7 +166,9 @@ const MonPanier = ({panier,isAuthenticated,setPanier}) => {
                         </button>
                     </div>
                 </div>
-            } 
+            }                      
+            </div> 
+           
         
         </div> 
         </>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
+import '../../styles/formformikstyle.css'
 
 
 const FormFormik = (
@@ -79,14 +80,14 @@ const FormFormik = (
 
             ( 
                 <>
-                    <Form className="form-group pl-5 pt-5 pb-4 col-12" onSubmit={handleSubmit}>
+                    <Form className="form-group col-12 container-form-formik" onSubmit={handleSubmit}>
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-md-6 col-sm-12">
                                 <div className="col-12">
-                                    <h5 className="pt-2 pb-4 text-dark text-uppercase"> CONFIGURER VOTRE CADRE {dataBike.type} </h5>
+                                    <h5 className="text-dark text-uppercase titre-configuration"> CONFIGURER VOTRE CADRE {dataBike.type} </h5>
                                 </div>
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                         <div className="is-invalid">
                                             <label className="pt-2 pb-2">TAILLE </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "taille" 
@@ -101,7 +102,7 @@ const FormFormik = (
                                         </div>
                                         {touched.taille && errors.taille ? (<div className="invalid-feedback">{errors.taille}</div> ) : null}
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                     <div className="is-invalid">
                                             <label className="pt-2 pb-2">Couleur </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "couleur" className={touched.couleur && errors.couleur? "custom-select is-invalid" : "custom-select"}
@@ -118,7 +119,7 @@ const FormFormik = (
                                     </div> 
                                 </div>
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                         <div className="is-invalid">
                                             <label className="pt-4 pb-2">FREINS </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "freins" className={touched.freins && errors.freins ? "custom-select is-invalid" : "custom-select"} 
@@ -131,7 +132,7 @@ const FormFormik = (
                                         {touched.freins && errors.freins ? (<div className="invalid-feedback">{errors.freins}</div> ) : null}  
                                     </div>
                                     
-                                    <div className="col-6">
+                                    <div className="col-md-6 col-sm-12">
                                         <div className="is-invalid">
                                             <label className="pt-4 pb-2">Type de blocage </label> <sup>&#128949;</sup>
                                             <Field as="select" name = "blocage" className={touched.blocage && errors.blocage ? "custom-select is-invalid" : "custom-select"}
@@ -162,8 +163,8 @@ const FormFormik = (
                                     </div> 
                                 </div>
                             </div>
-                            <div className="col-6 text-center">                            
-                                <div className="mt-5 pt-5">
+                            <div className="col-md-6 col-sm-12 text-center">                            
+                                <div className="container-prix-panier">
                                     <h5 className="mt-4"> Prix total TTC : <span className="prix" >{values.freins == "disques" ? values.prix = prix+300 : values.prix = newPrix} &euro;  </span>  </h5>
                                     <button type="submit" id="ajoutPanier" className="btn btn-primary mt-4">AJOUTER PANIER</button> 
                                 </div>

@@ -1,0 +1,42 @@
+.container-form-formik{
+    padding-left: 5rem;
+    padding-top:3rem;
+    padding-bottom: 4rem;
+    padding-right:5rem;
+}
+.container-prix-panier{
+    margin-top:5rem;
+    padding-top:5rem;
+}
+.titre-configuration{
+    padding-top:2rem;
+    padding-bottom:2rem;
+}
+.container-button-roues{
+    padding-top:4rem;
+    justify-content:center;
+    margin:0;
+}
+
+
+@media only screen and (max-width:768px){
+    .container-form-formik{
+        padding-left:0;
+        padding-right: 0;
+        padding-top:3rem;
+    }
+    .container-prix-panier{
+        margin-top:0;
+        padding-top:2rem;
+    }
+    .titre-configuration{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .container-button-roues button {
+        margin:0.3rem;
+    }
+}

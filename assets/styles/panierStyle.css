@@ -1,32 +1,9 @@
 h3{
     color:black;
+    text-transform: uppercase;
 }
 #imagepanier{
     width:100%;
-}
-.table-bordered th{
-    border-left:solid 1px black;
-    border-top:solid 1px black;
-    border-bottom:2px solid black;
-}
-.table-bordered td{
-    border-left:solid 1px black;
-    border-bottom:solid 1px black;
-}
-.table thead th{
-    border-bottom:2px solid black;
-}
-.table-bordered thead tr th:last-child{
-    border-right: solid 1px black;
-}
-.table-bordered tbody tr td:last-child{
-    border-right: solid 1px black;
-}
-.table-bordered thead{
-    background-color:#C8FFE1;
-}
-.table {
-    border:none
 }
 #supprimerpanier{
     background-color:transparent;
@@ -46,6 +23,169 @@ h3{
     color: #DCB111;
     box-shadow:0px 0px 0px 2px #DCB111 inset; 
 }
+
+
+/* Nouveau Panier */
+.container-titre{
+    padding-top:5rem;
+    padding-bottom:5rem;
+    margin-top:3rem;
+    padding-left:4rem;
+}
+.container-global-panier{
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-bottom:4rem;
+   
+}
+.tableau-header{
+    border-top: solid 1px black;
+    background-color: #C8FFE1;  
+    color:black;
+    font-weight:bold;
+    display:flex;
+    width:100%;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+}
+.tableau-header div{
+    border-right:solid 1px black;
+    padding:1rem;
+    box-sizing: border-box;
+}
+.tableau-header div:first-child{
+    border-left:solid 1px black;
+}
+.container-body-panier{
+    background-color: white;
+    color:black;
+    text-align: center;
+    justify-content:center;
+    display:flex;
+    width:100%;
+
+}
+
+.container-body-panier div{
+    border-right:solid 1px black;
+    border-top:solid 1px black;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    box-sizing: border-box;
+    padding:1rem;
+}
+.container-body-panier div:first-child{
+    border-left:solid 1px black;
+}
+
+.row-panier-null{
+    text-align:center;
+    background-color:white;
+    padding:1rem;
+    font-style: italic;
+    color:black;
+    border:solid 1px black;
+}
+
+.container-prix{
+    display:flex;
+    align-items:center;
+    justify-content:end;
+    width:100%;
+}
+.container-prix div{
+    text-align:center;
+    padding:1rem;
+    border-top:solid 1px black;
+    border-right:solid 1px black;
+}
+.container-prix div:first-child{
+    border-bottom:solid 1px transparent; 
+    color:transparent;  
+}
+.container-prix div:nth-child(2){
+    border-bottom:solid 1px black;
+    font-weight:bold;
+    color:black
+}
+.container-prix div:last-child{
+    border-bottom:solid 1px black;
+    color:black
+}
+.container-bouton-commander {
+    padding-top:3rem;
+    padding-bottom:3rem;
+    width:100%;
+}
+.container-bouton-commander div{
+    justify-content:flex-end;
+    display:flex;
+    padding-right:0;
+}
+@media only screen and (max-width:768px){
+
+    .container-global-panier{
+        padding:1rem 4rem;
+    }
+    .container-body-panier{
+        width:100%;
+    }
+    .container-body-panier div{
+        width:100%;
+        border-left:solid 1px black;
+    }
+    #imagepanier{
+        width:40%;
+    }
+    .container-body-panier div:nth-of-type(4){
+        border-left:none;
+    }
+    .container-body-panier div:last-of-type{
+        margin-bottom:1.5rem;
+        border-bottom:solid 1px black;
+    }
+    .tableau-header div:not(div:nth-of-type(1)){
+        display:none;
+    }
+    .container-prix :first-child{
+        display:none;
+    }
+    .container-prix{
+        width:100%;
+        border-left: solid 1px black;
+    }
+    .container-prix div{
+        text-align:center;
+        font-weight:bold;
+    }
+    .container-titre{
+        display:flex;
+        width:100%;
+        justify-content:center;
+        align-items:center;
+        padding:1rem 1rem;
+        margin-top:1rem;
+    }
+    .container-bouton-commander div{
+        align-items:center;
+        justify-content:center;
+    }
+    .container-bouton-commander div button {
+        width:75%
+    }
+
+}
+@media only screen and (max-width:552px){
+    .container-global-panier{
+        padding:1rem 0.5rem;
+    }
+}
+
+
+
 
 
 
