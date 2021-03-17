@@ -4,10 +4,8 @@
     font-size : 0.8rem;
 }
 .container-footer{
-    height:50px;
-    padding-bottom:50px;
     width:100%;
-    position:absolute;
+    position:relative;
     bottom:0;
 }
 .copy{

@@ -1,12 +1,11 @@
 
-#app{
-   min-height:100%;
-}
+
 body {
     font-family: 'Nanum Gothic', sans-serif;
     color : #414F8E;
     margin:0;
-    height:100%
+    height:100%;
+    
     
 }
 
