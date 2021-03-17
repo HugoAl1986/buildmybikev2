@@ -7,7 +7,7 @@ const Footer = () => {
    
     return(
         <>
-            
+            <div className="container-footer">
             <div className="row footer">
                 <p> 
                     <span className="pr-2 text-uppercase font-weight-bold"> Contactez-Nous : </span>
@@ -19,6 +19,7 @@ const Footer = () => {
             </div>
             <div className="row copy" id="footercontact">
                <p className="p-3 ml-1 m-0"> &copy; 2021 Crée par HugoAl. Tous droits réservés</p>
+            </div>
             </div>
         </>
     )

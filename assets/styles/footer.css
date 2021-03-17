@@ -3,6 +3,13 @@
     color : #414F8E;
     font-size : 0.8rem;
 }
+.container-footer{
+    height:50px;
+    padding-bottom:50px;
+    width:100%;
+    position:absolute;
+    bottom:0;
+}
 .copy{
     font-size : 0.8rem;
     background-color:rgb(236, 237, 240);
@@ -16,11 +23,7 @@
     align-items:center;
     justify-content:flex-end;
 }
-#footercontact{
-    margin-bottom:300px;
-    position:absolute;
-    bottom:0;
-}
+
 .footer p{
   padding:1rem 2rem;
   margin-left:1;
