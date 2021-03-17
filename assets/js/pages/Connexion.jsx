@@ -84,7 +84,7 @@ function handleChange (event) {
                         </ul>
                         <NavLink to="/inscriptionbis"> 
                             <button type="button" className="btnConnexion"> Creer un compte 
-                                <i  style={{fontSize :"1rem"}} className="bi bi-lock-fill ml-1"></i>
+                                <i  style={{fontSize :"1rem"}} className="bi bi-lock-fill"></i>
                             </button>    
                         </NavLink>
                 </div>

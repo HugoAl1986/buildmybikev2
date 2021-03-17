@@ -1,9 +1,16 @@
-.hrstyle{
+.hrstyle-sansmargin{
     border: 0;
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     width:50%;
     margin-left:0;
+}
+.hrstyle-avecmargin{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width:50%;
+    margin-left:1.2rem;
 }
 
 .zoom{
@@ -40,8 +47,11 @@
     justify-content:center;
     align-items:center
 }
-.hrstyle{
+.hrstyle-avecmargin,.hrstyle-sansmargin{
     width:100%;
+}
+.hrstyle-avecmargin{
+    margin-left:0;
 }
 .container-content-cadre p{
     text-align: center;
