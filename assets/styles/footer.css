@@ -18,6 +18,8 @@
 }
 #footercontact{
     margin-bottom:300px;
+    position:absolute;
+    bottom:0;
 }
 .footer p{
   padding:1rem 2rem;
