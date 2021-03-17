@@ -61,8 +61,9 @@ const [modalAvertissementAPP,setModalAvertissementAPP] = useState(true)
                     <Route path="/" component={Accueil}/>
 
                 </Switch>
-                <Footer/>   
-            </div>  
+                  
+            </div> 
+            <Footer/>  
                           
            </HashRouter>
 };
