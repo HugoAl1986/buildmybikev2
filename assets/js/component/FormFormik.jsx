@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
-import '../../styles/formformikstyle.css'
+import '../../styles/formFormikstyle.css'
 
 
 const FormFormik = (
