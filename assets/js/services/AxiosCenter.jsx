@@ -40,8 +40,7 @@ function Deconnection(){
 }
 // Permet l'ajout du token dans le header dans chacune des requêtes axios
 function SetHeaderToken(token){
-    axios.defaults.headers["Authorization"] = "Bearer " + token;
-
+    axios.defaults.headers["Authorization"] = "Bearer " + token;  
 }
 
 // Fonction pour récupérer le token au démarrage de la page

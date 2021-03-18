@@ -130,10 +130,10 @@ const handleClick = () => {
                                         prenom : values.prenom,
                                         nom : values.nom,
                                         email : values.email,
-                                        codePostal: values.codePostal,
+                                        codePostal: parseInt(values.codePostal),
                                         password:values.password,
                                         ville : values.ville,
-                                        numeroRue: values.numeroRue,
+                                        numeroRue: parseInt(values.numeroRue),
                                         nomRue: values.nomRue,
                                         dateDeNaissance: values.dateDeNaissance
                                                     }
@@ -165,6 +165,7 @@ const handleClick = () => {
                     else{
                     // Pas de redirection car email non modifié
                         try {
+                            console.log(newDataUser);
                             await AxiosCenter.putClient(id,newDataUser) 
                             .then(response => { if(response) {
                                 setModalSuccessAPP(true)
@@ -176,7 +177,7 @@ const handleClick = () => {
                             }
                         catch (error)
                         {
-                        console.log(error)
+                        console.log(error.response)
                         setSubmitForm(true)
                         setLoader(false);
                         setModalErrorAPP(true)
@@ -316,7 +317,7 @@ const handleClick = () => {
                             <label className="form-label">Numero Rue</label>
                             <Field
                                     className={SubmitForm == true ? "form-control" : touched.numeroRue == null ? "form-control" : errors.numeroRue && touched.numeroRue == null ? "form-control is-valid" : errors.numeroRue == null && touched.numeroRue!== null ? "form-control is-valid" : "form-control is-invalid"}
-                                    type="text"
+                                    type="number"
                                     name="numeroRue"
                                     disabled = {disableInput} 
                                     onChange={handleChange}
