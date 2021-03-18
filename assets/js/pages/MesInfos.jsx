@@ -6,6 +6,7 @@ import Loader from 'react-loader-spinner';
 import dateformat from 'dateformat';
 import ModalSuccess from '../component/Modal/ModalSuccess';
 import ModalErrorServeur from '../component/Modal/ModalErrorServeur';
+import '../../styles/mesinfosstyle.css';
 
 
 // Gestion des erreurs du formulaire avec la librairie Yup
@@ -210,46 +211,38 @@ const handleClick = () => {
                     setModalServError={setModalErrorAPP}
                     message="Désolé une erreur est survenue lors de la modification de vos données, veuillez nous faire remonter le message !!!"
                     />
+                <div className="container-global-mesinfos">
+                    <div className="container-mesinfos-titre">
+                        <h2>Mes commandes</h2>
+                    </div>
+                    <div className="container-mescommandes"> 
+                        <div className="container-mescommandes-header">
 
-                <div className="container mb-0 mt-5 ml-5 mr-5 p-5">
-                    <h2 className="text-uppercase mb-5" style = {{color : "black"}}> Mes Commandes</h2>
-                    <table className="table text-center">
-                        <thead>
-                            <tr className="table-primary row">
-                            <th className="col-2" scope="row">#</th>
-                            <th className="col-5">Date commande</th>
-                            <th className="col-5">Montant</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            {!loaderCommande ? 
-                            <tr className="row text-center">
-                                <td scope="row" style = {{fontSize : "11px"}}className="font-italic col-2">{"En attente des données ..."}</td>                               
-                                <td className="font-italic col-5"  style = {{fontSize : "11px"}}>{"En attente des données ..."}</td>
-                                <td className="font-italic col-5"  style = {{fontSize : "11px"}}>{"En attente des données ..."}</td>
-                            </tr> 
-                            : DataCommande.length == 0 ?
-                            <tr className="row">
-                                <td className="font-italic col-12"> Vous n'avez toujours pas effectué de commandes !!</td>
-                            </tr>
-                            :
-                            DataCommande.map(commande =>
-                            <tr className="row" key={commande.id}>
-                                <th className="col-2" scope="row"> {commande.numCommande} </th>
-                                <td className="col-5">{dateformat(commande.dateCommande,"yyyy-mm-dd")}</td>
-                                <td className="col-5">{commande.montant} &#8364;</td>
-                            </tr>    
-                            )
-                        }
-                        </tbody>                      
-                        </table>
-                </div>
-                
-                <Form className = "container mt-2 ml-5 mr-5 mb-5 p-5" onSubmit={handleSubmit}>
+                            <div className="col-2">#</div>
+                            <div className="col-5">Date</div>
+                            <div className="col-5">Montant</div>
+                        </div>
+                    
+                        {!loaderCommande ? 
+                            <div className="container-mescommandes-attente">
+                                <div className="col-2">{"Patientez..."}</div>
+                                <div className="col-5">{"Patientez..."}</div>
+                                <div className="col-5">{"Patientez..."}</div>
+                            </div>
+                        : DataCommande.length == 0 ?
+                            <div className="col-12 container-commandenulle w-100">Vous n'avez toujours pas effectué de commandes !</div>
+                        : DataCommande.map(commande =>
+                            <div className="container-mescommandes-data" key={commande.id}>
+                                <div className="col-2">{commande.numCommande}</div>
+                                <div className="col-5">{dateformat(commande.dateCommande,"yyyy-mm-dd")}</div>
+                                <div className="col-5">{commande.montant} &#8364;</div>
+                            </div>
+                        )}
+                    </div>                 
+                    <Form className = "container-mesinfos-form" onSubmit={handleSubmit}>
                     <h2 className="text-uppercase mb-5" style = {{color : "black"}}> Mes informations</h2>
                     <div className="row mb-3">
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 container-formMesInfos-input">
                         <label className="form-label">Prénom</label>
                         <Field type="text"  
                                 className={SubmitForm == true ? "form-control" : touched.prenom == null ? "form-control" : errors.prenom && touched.prenom == null ? "form-control is-valid" : errors.prenom == null && touched.prenom!== null ? "form-control is-valid" : "form-control is-invalid"}                               
@@ -263,7 +256,7 @@ const handleClick = () => {
                                     <div className="invalid-feedback" >{errors.prenom}</div>
                             ) : null}
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 container-formMesInfos-input">
                         <label className="form-label">Nom</label>
                         <Field type="text"  
                                 className={SubmitForm == true ? "form-control" : touched.nom == null || undefined ? "form-control" : errors.nom && touched.nom == null ? "form-control is-valid" : errors.nom == null && touched.nom!== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -279,7 +272,7 @@ const handleClick = () => {
                     </div>
                     </div>
                         <div className="row mb-3">
-                            <div className="col-12">
+                            <div className="col-12 container-formMesInfos-input">
                                 <label className="form-label">Email</label>
                                 <Field
                                         className={SubmitForm == true ? "form-control" : touched.email == null ? "form-control" : errors.email && touched.email == null ? "form-control is-valid" : errors.email== null && touched.email !== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -299,7 +292,7 @@ const handleClick = () => {
                         </div>
                         
                     <div className="row mb-3">
-                        <div className="col-12">
+                        <div className="col-12 container-formMesInfos-input">
                             <label className="form-label">Date de Naissance</label>
                             <Field
                                         className={SubmitForm == true ? "form-control" : touched.dateDeNaissance == null ? "form-control" : errors.dateDeNaissance && touched.dateDeNaissance == null ? "form-control is-valid" : errors.dateDeNaissance == null && touched.dateDeNaissance!== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -319,7 +312,7 @@ const handleClick = () => {
                         </div>
                     </div>
                     <div className="row mb-3">
-                        <div className="col-3">
+                        <div className="col-12 col-sm-4 col-md-3 container-formMesInfos-input">
                             <label className="form-label">Numero Rue</label>
                             <Field
                                     className={SubmitForm == true ? "form-control" : touched.numeroRue == null ? "form-control" : errors.numeroRue && touched.numeroRue == null ? "form-control is-valid" : errors.numeroRue == null && touched.numeroRue!== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -335,7 +328,7 @@ const handleClick = () => {
                                     <div className="invalid-feedback" >{errors.numeroRue}</div>
                             ) : null}
                         </div>
-                        <div className="col-9">
+                        <div className="col-12 col-sm-8 col-md-9 container-formMesInfos-input">
                             <label className="form-label">Nom Rue</label>
                             <Field
                                     className={SubmitForm == true ? "form-control" : touched.nomRue == null ? "form-control" : errors.nomRue && touched.nomRue == null ? "form-control is-valid" : errors.nomRue == null && touched.nomRue!== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -353,7 +346,7 @@ const handleClick = () => {
                         </div>
                     </div>
                     <div className="row mb-3">
-                        <div className="col-3">
+                        <div className="col-12 col-sm-4 col-md-3 container-formMesInfos-input">
                             <label className="form-label">Code Postal</label>
                             <Field
                                     className={SubmitForm == true ? "form-control" : touched.codePostal == null ? "form-control" : errors.codePostal && touched.codePostal == null ? "form-control is-valid" : errors.codePostal == null && touched.codePostal!== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -369,7 +362,7 @@ const handleClick = () => {
                                     <div className="invalid-feedback" >{errors.codePostal}</div>
                             ) : null}
                         </div>
-                        <div className="col-9">
+                        <div className="col-12 col-sm-8 col-md-9 container-formMesInfos-input">
                             <label className="form-label">Ville</label>
                             <Field
                                     className={SubmitForm == true ? "form-control" : touched.ville == null ? "form-control" : errors.ville && touched.ville == null ? "form-control is-valid" : errors.ville== null && touched.ville !== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -392,7 +385,7 @@ const handleClick = () => {
                         </div>
                     </div>
                     <div className="row mb-3">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-6 container-formMesInfos-input">
                                     <label className="form-label">Password</label>
                                     <Field
                                             className={SubmitForm == true ? "form-control" : touched.password == null ? "form-control" : errors.password && touched.password== null ? "form-control is-valid" : errors.password== null && touched.password !== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -409,7 +402,7 @@ const handleClick = () => {
                                             <div className="invalid-feedback" >{errors.password}</div>
                                     ) : null}
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-6 container-formMesInfos-input">
                                     <label className="form-label">Confirmation Password</label>
                                     <Field
                                             className={SubmitForm == true ? "form-control" : touched.confpassword == null ? "form-control" : errors.confpassword && touched.confpassword== null ? "form-control is-valid" : errors.confpassword== null && touched.confpassword !== null ? "form-control is-valid" : "form-control is-invalid"}
@@ -427,15 +420,16 @@ const handleClick = () => {
                                     ) : null}
                             </div>
                         </div>
-                    <div className="row">
+                    <div className="row container-mesinfos-button">
                         <div className="col-12">
-                            <button type="button" className="btnInscription mt-4" onClick={handleClick}>Modification</button>
-                            <button type="submit" className="btnConnexion mt-4 ml-3">Confirmation
+                            <button type="button" className="btnModifInfos mt-4" onClick={handleClick}>Modification</button>
+                            <button type="submit" className="btnInscrInfos mt-4">Confirmation
                                 {loader && <Loader className="ml-2 d-inline-block" type="ThreeDots" color="black" height={20} width={20}/>}
                             </button>
                         </div>
                     </div>
                 </Form>
+                </div>
                 </>
             )}
             </Formik>
