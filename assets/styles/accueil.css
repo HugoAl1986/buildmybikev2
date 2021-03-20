@@ -30,7 +30,7 @@
 }
 .container-image-cadre {
 
-    display:flex;
+    display:-webkit-flex;
     order:2;
 }
 .container-image-cadre img{
