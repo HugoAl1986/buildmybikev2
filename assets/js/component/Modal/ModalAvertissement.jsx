@@ -22,9 +22,8 @@ const ModalAvertissement = ({modalAvertissementAPP,setModalAvertissementAPP}) =>
                 <Container>
                 <Row>
                     <Col xs={12} className="d-flex align-items-center text-justify" id="textmodalAvertissement">
-                    Cette application n'a aucun but commercial. Tous les produits sont fictifs. <br></br><br></br>
-                    Certains problêmes d'affichage peuvent apparaître sur les tablettes ou smartphones (en cours de résolution).<br></br>
-                    Merci de bien vouloir nous remonter tout autre disfonctionnement à l'adresse située en bas de page. <br></br><br></br>
+                    Cette application n'a aucun but commercial. Tous les produits sont fictifs. <br></br>
+                    Merci de bien vouloir nous remonter tout disfonctionnement à l'adresse située en bas de page. <br></br><br></br>
                     Bonne Navigation
                     </Col>
                 </Row>
