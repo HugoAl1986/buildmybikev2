@@ -4,7 +4,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "7.4.0",
+        "php": "^8.0.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "^2.5",
@@ -64,7 +64,10 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
