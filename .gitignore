@@ -6,8 +6,7 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
-!/vendor/symfony/doctrine-bridge/PropertyInfo/DoctrineExtractor.php
-/vendor/*
+/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
