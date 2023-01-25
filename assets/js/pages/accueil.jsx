@@ -36,7 +36,7 @@ const Accueil = () => {
                    </div>
                </div>
                <div className="row container-cadre">
-                   <div className="col-sm-3 col-xs-12 container-content-cadre"><a href="/vtt" className="hvr-grow text-decoration-none"><h4 className="pl-4 pt-4 pb-1 m-0"> VTT </h4> </a>
+                   <div className="col-sm-3 col-xs-12 container-content-cadre"><Link to="/vttrigide" className="hvr-grow text-decoration-none"><h4 className="pl-4 pt-4 pb-1 m-0"> VTT </h4> </Link>
                         <hr className="hrstyle-avecmargin" ></hr>
                         <p className="m-0 pt-1 pl-4"> Deux modèles de VTT avec ou sans suspension pour parcourir les terrains les plus escarpés.</p>   
                    </div>
@@ -49,7 +49,7 @@ const Accueil = () => {
                        <img src={triathlonaccueil} alt="triathlonaccueil" className="img-fluid p-4 zoom"/>
                    </div>
                    <div className="col-sm-5 col-xs-12 container-content-cadre">
-                            <a href="/triathlon" className="hvr-grow text-decoration-none"><h4 className="pt-4 pb-1 m-0"> Triathlon</h4> </a>
+                            <Link to="/triathlon" className="hvr-grow text-decoration-none"><h4 className="pt-4 pb-1 m-0"> Triathlon</h4> </Link>
                             <hr className="hrstyle-sansmargin"></hr>
                             <p className="m-0 pt-1"> Nos cadres de triathlon offrent une pénétration parfaite dans le vent pour battre tous vos chronos.</p>
                    </div>
@@ -57,7 +57,7 @@ const Accueil = () => {
                <div className="row container-cadre">
                   
                    <div className="col-sm-4 col-xs-12 container-content-cadre">
-                            <a href="/cyclocross" className="hvr-grow text-decoration-none"><h4 className=" pl-4 pt-4 pb-1 m-0"> Cyclocross </h4> </a>
+                            <Link to="/cyclocross" className="hvr-grow text-decoration-none"><h4 className=" pl-4 pt-4 pb-1 m-0"> Cyclocross </h4> </Link>
                             <hr className="hrstyle-avecmargin"></hr>
                             <p className="m-0 pl-4"> Courrez, Ridez faites comme votre champion Mathieu Van Der Poel sur les terrains les plus difficiles.</p>
                    </div>

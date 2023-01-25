@@ -29,8 +29,6 @@
     display:flex;
 }
 .container-image-cadre {
-
-    display:flex;
     order:2;
 }
 .container-image-cadre img{
